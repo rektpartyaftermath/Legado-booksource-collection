@@ -1,0 +1,139 @@
+[
+  {
+    "bookSourceComment": "Partial",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "RoyalRoad",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.royalroad.com/",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Rising-Stars::fictions/rising-stars",
+    "lastUpdateTime": 1718533904582,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": "@css:div.hidden-content>p@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "@css:div.chapter-content@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "checkKeyWord": "template",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:table#chapters>tbody>tr",
+      "chapterName": "@css:tr>td>a@text##.*ago",
+      "chapterUrl": "@css:tr>td>a@href"
+    },
+    "searchUrl": "fictions/search?title={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "Untested",
+    "bookSourceName": "Readwn",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.readwn.com/",
+    "customOrder": 4,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": 1718533920862,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "//span[contains(@itemprop, \"author\")]/text()",
+      "coverUrl": "https://www.readwn.com{{//header[contains(@class, \"novel-header\")]//figure/img/@data-src}}",
+      "intro": "//div[contains(@class, \"content\")]/p/text()##(Novel keywords:)(.*)",
+      "kind": "//div[@class=\"categories\"]/ul/li/a/text()",
+      "lastChapter": "//div[@class=\"intro\"]/a[1]/text()",
+      "name": "//h1[contains(@class, \"novel-title\")]/text()",
+      "tocUrl": "https://www.readwn.com/e/extend/fy.php?page=0&wjm={{//div[@class=\"filters\"]/a/@href##^.*?&wjm=}}",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "//div[@class=\"chapter-content\"]/p/text()",
+      "replaceRegex": ""
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "//ul[contains(@class, \"novel-list\")]/li",
+      "bookUrl": "//a/@href",
+      "checkKeyWord": "Internet Cafe",
+      "coverUrl": "//a/div/figure/img/@data-src",
+      "intro": "",
+      "kind": "//a/div[4]/span/text()",
+      "lastChapter": "{{//a/div[2]/span/text()}} • {{//a/div[3]/span/text ()}}",
+      "name": "//a/@title"
+    },
+    "ruleToc": {
+      "chapterList": "//ul[@class=\"chapter-list\"]/li",
+      "chapterName": "//a/strong/text()",
+      "chapterUrl": "https://www.readwn.com{{//a/@href}}",
+      "nextTocUrl": "//li[@class=\"active\"]/following-sibling::li[1]/a/@href",
+      "updateTime": "//a/time/text()"
+    },
+    "searchUrl": "/e/search/index.php,{\n'charset': 'utf-8',\n'method': 'POST',\n'body': 'keyboard={{key}}&show=title&tbname=news&tempid=1',\n'headers': {\n    'User-Agent': 'Mozilla/5.0 (Linux; Android 12; 220333QAG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36'\n    }\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "Broken",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "NovelFulll",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novelfulll.com",
+    "customOrder": 5,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "shounen::/genre/shounen?page={{page}}\nharem::/genre/harem?page={{page}}\ncomedy::/genre/comedy?page={{page}}\nmartial-arts::/genre/martial-arts?page={{page}}\nschool-life::/genre/school-life?page={{page}}\nmystery::/genre/mystery?page={{page}}\nshoujo::/genre/shoujo?page={{page}}\nromance::/genre/romance?page={{page}}\nsci-fi::/genre/sci-fi?page={{page}}\ngender-bender::/genre/gender-bender?page={{page}}\nmature::/genre/mature?page={{page}}\nfantasy::/genre/fantasy?page={{page}}\nhorror::/genre/horror?page={{page}}\ndrama::/genre/drama?page={{page}}\ntragedy::/genre/tragedy?page={{page}}\nsupernatural::/genre/supernatural?page={{page}}\necchi::/genre/ecchi?page={{page}}\nxuanhuan::/genre/xuanhuan?page={{page}}\nadventure::/genre/adventure?page={{page}}\naction::/genre/action?page={{page}}\npsychological::/genre/psychological?page={{page}}\nxianxia::/genre/xianxia?page={{page}}\nwuxia::/genre/wuxia?page={{page}}\nhistorical::/genre/historical?page={{page}}\nslice-of-life::/genre/slice-of-life?page={{page}}\nseinen::/genre/seinen?page={{page}}\nlolicon::/genre/lolicon?page={{page}}\nadult::/genre/adult?page={{page}}\njosei::/genre/josei?page={{page}}\nsports::/genre/sports?page={{page}}\nsmut::/genre/smut?page={{page}}\nmecha::/genre/mecha?page={{page}}\nyaoi::/genre/yaoi?page={{page}}\nshounen-ai::/genre/shounen-ai?page={{page}}\nhistory::/genre/history?page={{page}}\nmartial::/genre/martial?page={{page}}",
+    "header": "{\n\"Referer\": \"https://novelfulll.com/\",\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 12; Nexus 5X Build/NRD90M); wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/96.0.4664.104 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": 1718533930825,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "init": "",
+      "intro": "@css:div.desc-text>p@text",
+      "kind": "@css:div.info>div:contains(genre)>a@text"
+    },
+    "ruleContent": {
+      "content": "@css:div>p@text"
+    },
+    "ruleExplore": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(list)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href",
+      "coverUrl": "@css:div>img@src",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(search)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href## ##%20",
+      "checkKeyWord": "Villain",
+      "coverUrl": "@css:div>img@src",
+      "kind": "",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:ul.list-chapter>li",
+      "chapterName": "@css:a>span.chapter-text@text",
+      "chapterUrl": "@css:a@href##^##https://novelfulll.com",
+      "nextTocUrl": "@css:li.next>a@href##^##https://novelfulll.com"
+    },
+    "searchUrl": "/book/search.html?page_num={{page}}&keyword={{key}}",
+    "weight": 0
+  }
+]

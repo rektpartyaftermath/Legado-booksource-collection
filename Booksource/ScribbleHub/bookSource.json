@@ -1,0 +1,61 @@
+[
+  {
+    "bookSourceComment": "Thx YiAnnings-pills for fixing this source(those cookie things).",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "Scribblehub",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.scribblehub.com",
+    "bookUrlPattern": "",
+    "concurrentRate": "",
+    "customOrder": 37,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Weekly-rank::/series-ranking/?sort=5&order=2&pg={{page}}\nDaily-rank::/series-ranking/?sort=5&order=1&pg={{page}}\nAction::/genre/action/?pg={{page}}\nAdult::/genre/adult/?pg={{page}}\nAdventure::/genre/adventure/?pg={{page}}\nBoys-love::/genre/boys-love/?pg={{page}}\nComedy::/genre/comedy/?pg={{page}}\nDrama::/genre/drama/?pg={{page}}\nEcchi::/genre/ecchi/?pg={{page}}\nFanfiction::/genre/fanfiction/?pg={{page}}\nFantasy::/genre/fantasy/?pg={{page}}\nGender-bender::/genre/gender-bender/?pg={{page}}\nGirls-love::/genre/girls-love/?pg={{page}}\nHarem::/genre/harem/?pg={{page}}\nHistorical::/genre/historical/?pg={{page}}\nHorror::/genre/horror/?pg={{page}}\nIsekai::/genre/isekai/?pg={{page}}\nJosei::/genre/josei/?pg={{page}}\nLitrpg::/genre/litrpg/?pg={{page}}\nMartial-arts::/genre/martial-arts/?pg={{page}}\nMature::/genre/mature/?pg={{page}}\nMecha::/genre/mecha/?pg={{page}}\nMystery::/genre/mystery/?pg={{page}}\nPsychological::/genre/psychological/?pg={{page}}\nRomance::/genre/romance/?pg={{page}}\nSchool-life::/genre/school-life/?pg={{page}}\nSci-fi::/genre/sci-fi/?pg={{page}}\nSeinen::/genre/seinen/?pg={{page}}\nSlice-of-life::/genre/slice-of-life/?pg={{page}}\nSmut::/genre/smut/?pg={{page}}\nSports::/genre/sports/?pg={{page}}\nSupernatural::/genre/supernatural/?pg={{page}}\nTragedy::/genre/tragedy/?pg={{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\",\n  \"Cookie\":\"toc_sorder=asc; toc_show=1000000;\"\n}",
+    "lastUpdateTime": 1707780485023,
+    "loginCheckJs": "",
+    "loginUi": "",
+    "loginUrl": "https://www.scribblehub.com",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:span.auth_name_fic@text",
+      "coverUrl": ".fic_image > img@src",
+      "init": "",
+      "intro": "@css:div.wi_fic_desc@text##more>>|<<less",
+      "kind": "@css:a.fic_genre@text",
+      "name": "@css:div.fic_title@text",
+      "tocUrl": "/wp-admin/admin-ajax.php,{\n  \"method\": \"POST\",\n  \"body\": \"action=wi_getreleases_pagination&pagenum=1&mypostid={{java.get('bookid')}}\"\n}"
+    },
+    "ruleContent": {
+      "content": ".chp_raw@html"
+    },
+    "ruleExplore": {
+      "author": "@css:div.search_stats>span.nl_stat:eq(8) a@text",
+      "bookList": "@css:div.search_main_box",
+      "bookUrl": "@css:div.search_title>a@href@put:{bookid:\"span[id]@id##^...\"}",
+      "coverUrl": "@css:img@src",
+      "kind": "@css:div.search_genre>a@text",
+      "name": "@css:div.search_title>a@text",
+      "wordCount": "@css:div.search_stats>span.nl_stat:eq(6)@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:div.search_stats>span.nl_stat:eq(8)@text",
+      "bookList": "@css:div.search_main_box",
+      "bookUrl": "@css:div.search_title>a@href@put:{bookid:\"span[id]@id##^...\"}",
+      "checkKeyWord": "field",
+      "coverUrl": "@css:img@src",
+      "kind": "@css:div.search_genre>a@text",
+      "name": "@css:div.search_title>a@text",
+      "wordCount": "@css:div.search_stats>span.nl_stat:eq(6)@text"
+    },
+    "ruleToc": {
+      "chapterList": ".toc_w",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/?s={{key}}&post_type=fictionposts",
+    "weight": 0
+  }
+]

@@ -1,0 +1,687 @@
+[
+  {
+    "bookSourceComment": "Made by me",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "AllNovelBin",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://allnovelbin.net/",
+    "customOrder": 6,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Daily-update::sort/daily-update-novels?page={{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"\n}",
+    "lastUpdateTime": 1708793785109,
+    "loginUrl": "https://thenovelbin.org/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:ul.info-meta>li:matches(thor)@text##Author:",
+      "coverUrl": "",
+      "intro": "@css:div.desc-text@text@put:{bookid:\"div@data-novel-id\"}",
+      "kind": "@css:ul.info-meta>li:matches(Genre)@text##Genre:",
+      "name": "@css:h3.title@text",
+      "tocUrl": "https://allnovelbin.net/ajax/chapter-archive?novelId=@get:{bookid}"
+    },
+    "ruleContent": {
+      "content": "@css:p@text"
+    },
+    "ruleExplore": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-novel>div.row",
+      "bookUrl": "@css:h3>a@href",
+      "coverUrl": "@css:div>img@src",
+      "lastChapter": "@css:div.text-info@text",
+      "name": "@css:h3.novel-title@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-novel>div.row",
+      "bookUrl": "@css:h3>a@href",
+      "checkKeyWord": "city",
+      "coverUrl": "@css:div>img@src",
+      "lastChapter": "@css:div.text-info@text",
+      "name": "@css:h3.novel-title@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:div.col-xs-12 li",
+      "chapterName": "@css:span.nchr-text@text",
+      "chapterUrl": "@css:a@href"
+    },
+    "searchUrl": "search?keyword={{key}}&page={{page}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "BestLightNovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://bestlightnovel.com",
+    "customOrder": 22,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "RECENTLY UPDATED::https://bestlightnovel.com/novel_list?type=latest&category=all&state=all&page={{page}}\n\nCOMPLETED::https://bestlightnovel.com/novel_list?type=topview&category=all&state=completed&page={{page}}\n\nNEWEST::https://bestlightnovel.com/novel_list?type=newest&category=all&state=all&page={{page}}\n\nTOP VIEW::https://bestlightnovel.com/novel_list?type=topview&category=all&state=all&page={{page}}",
+    "lastUpdateTime": 1678689315037,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": "[property$=image]@content",
+      "intro": "[property$=description]@content\n##(^|[。！？]+[”」）】]?)##$1<br>",
+      "lastChapter": ".chapter-list@a.0@text"
+    },
+    "ruleContent": {
+      "content": "#vung_doc>div.1@html||#vung_doc@html"
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "span.-3@text##Author :\\s*",
+      "bookList": ".update_item",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "my",
+      "coverUrl": "img@src",
+      "kind": "span.-2@text##Last updated :\\s*",
+      "lastChapter": ".chapter@text",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "-.chapter-list>div",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "updateTime": "span.1@text"
+    },
+    "searchUrl": "https://bestlightnovel.com/search_novels/{{key}}?page={{page}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "BoxNovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://boxnovel.com",
+    "customOrder": 15,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "Action::https://boxnovel.com/manga-genre/action/<,page/{{page}}/>\nAdventure::https://boxnovel.com/manga-genre/adventure/<,page/{{page}}/>\nFantasy::https://boxnovel.com/manga-genre/fantasy/<,page/{{page}}/>\nRomance::https://boxnovel.com/manga-genre/romance/<,page/{{page}}/>\nHarem::https://boxnovel.com/manga-genre/harem/<,page/{{page}}/>\nMartial Arts::https://boxnovel.com/manga-genre/martial-arts/<,page/{{page}}/>\nEcchi::https://boxnovel.com/manga-genre/ecchi/<,page/{{page}}/>\nShounen::https://boxnovel.com/manga-genre/shounen/<,page/{{page}}/>\nComedy::https://boxnovel.com/manga-genre/comedy/<,page/{{page}}/>\nSchool Life::https://boxnovel.com/manga-genre/school-life/<,page/{{page}}/>\nDrama::https://boxnovel.com/manga-genre/drama/<,page/{{page}}/>\nHorror::https://boxnovel.com/manga-genre/horror/<,page/{{page}}/>\nShoujo::https://boxnovel.com/manga-genre/shoujo/<,page/{{page}}/>\nJosei::https://boxnovel.com/manga-genre/josei/<,page/{{page}}/>\nMature::https://boxnovel.com/manga-genre/mature/<,page/{{page}}/>\nMystery::https://boxnovel.com/manga-genre/mystery/<,page/{{page}}/>\nPsychological::https://boxnovel.com/manga-genre/psychological/<,page/{{page}}/>\nSci-fi::https://boxnovel.com/manga-genre/sci-fi/<,page/{{page}}/>\nSeinen::https://boxnovel.com/manga-genre/seinen/<,page/{{page}}/>\nSlice of Life::https://boxnovel.com/manga-genre/slice-of-life/<,page/{{page}}/>\nTragedy::https://boxnovel.com/manga-genre/tragedy/<,page/{{page}}/>\nSupernatural::https://boxnovel.com/manga-genre/supernatural/<,page/{{page}}/>",
+    "header": " {\"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"}",
+    "lastUpdateTime": 1678689354403,
+    "respondTime": 180836,
+    "ruleBookInfo": {
+      "author": "class.author-content@text",
+      "coverUrl": ".summary_image img@data-src",
+      "init": "",
+      "intro": ".summary__content@html",
+      "kind": "class.genres-content@text",
+      "name": ".post-title@text",
+      "tocUrl": "@js:\noptions = {\n\"method\": \"POST\",\n\"headers\": {\n    \"Referer\": baseUrl,\n    \"X-Requested-With\": \"XMLHttpRequest\"\n  }\n}\n\nbaseUrl+\"ajax/chapters/,\" + JSON.stringify(options)"
+    },
+    "ruleContent": {
+      "content": ".text-left@html"
+    },
+    "ruleExplore": {
+      "bookList": "class.page-item-detail",
+      "bookUrl": "tag.a.0@href",
+      "coverUrl": "img@data-src",
+      "lastChapter": "class.chapter-item.0@text",
+      "name": "h3@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": " class.mg_author@class.summary-content@text",
+      "bookList": "class.c-tabs-item__content",
+      "bookUrl": "tag.a.0@href",
+      "checkKeyWord": "God",
+      "coverUrl": "img@data-src",
+      "kind": " class.mg_state@class.summary-content@text",
+      "lastChapter": ".latest-chap .chapter@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "-class.wp-manga-chapter",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href",
+      "updateTime": "tag.i@text"
+    },
+    "searchUrl": "/?s={{key}}&post_type=wp-manga",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "Lightnovelpub",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.lightnovelpub.com/",
+    "customOrder": 36,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "New::genre/all/new/all/{{page}}\naction::genre/action/popular/all/{{page}}\nadult::genre/adult/popular/all/{{page}}\nadventure::genre/adventure/popular/all/{{page}}\ncomedy::genre/comedy/popular/all/{{page}}\ncontemporary::genre/contemporary/popular/all/{{page}}\nromance::genre/romance/popular/all/{{page}}\ndrama::genre/drama/popular/all/{{page}}\neastern-fantasy::genre/eastern-fantasy/popular/all/{{page}}\necchi::genre/ecchi/popular/all/{{page}}\nfantasy::genre/fantasy/popular/all/{{page}}\nromance::genre/romance/popular/all/{{page}}\ngender-bender::genre/gender-bender/popular/all/{{page}}\nharem::genre/harem/popular/all/{{page}}\nhistorical::genre/historical/popular/all/{{page}}\nhorror::genre/horror/popular/all/{{page}}\njosei::genre/josei/popular/all/{{page}}\nlolicon::genre/lolicon/popular/all/{{page}}\nmagical::genre/magical/popular/all/{{page}}\nrealism::genre/realism/popular/all/{{page}}\nmartial-arts::genre/martial-arts/popular/all/{{page}}\nmature::genre/mature/popular/all/{{page}}\nmecha::genre/mecha/popular/all/{{page}}\nmystery::genre/mystery/popular/all/{{page}}\npsychological::genre/psychological/popular/all/{{page}}\nromance::genre/romance/popular/all/{{page}}\nschool-life::genre/school-life/popular/all/{{page}}\nsci-fi::genre/sci-fi/popular/all/{{page}}\nseinen::genre/seinen/popular/all/{{page}}\nshoujo::genre/shoujo/popular/all/{{page}}\nshoujo-ai::genre/shoujo-ai/popular/all/{{page}}\nshounen::genre/shounen/popular/all/{{page}}\nshounen-ai::genre/shounen-ai/popular/all/{{page}}\nslice-of-life::genre/slice-of-life/popular/all/{{page}}\nsmut::genre/smut/popular/all/{{page}}\nsports::genre/sports/popular/all/{{page}}\nsupernatural::genre/supernatural/popular/all/{{page}}\ntragedy::genre/tragedy/popular/all/{{page}}\nvideo-games::genre/video-games/popular/all/{{page}}\nwuxia::genre/wuxia/popular/all/{{page}}\nxianxia::genre/xianxia/popular/all/{{page}}\nxuanhuan::genre/xuanhuan/popular/all/{{page}}\nyaoi::genre/yaoi/popular/all/{{page}}\nyuri::genre/yuri/popular/all/{{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"\n}",
+    "lastUpdateTime": 1708900304251,
+    "loginUrl": "https://www.lightnovelpub.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:div.author>a.property-item@text",
+      "coverUrl": "",
+      "init": "",
+      "intro": "@css:div.summary>div.content>p@text",
+      "kind": "@css:div.categories>ul@text",
+      "name": "",
+      "tocUrl": "@css:nav.content-nav>a.grdbtn@href"
+    },
+    "ruleContent": {
+      "content": "@css:div.chapter-content>p@text",
+      "replaceRegex": "",
+      "sourceRegex": ""
+    },
+    "ruleExplore": {
+      "bookList": "@css:li.novel-item",
+      "bookUrl": "@css:div.item-body>h4.novel-title>a@href",
+      "coverUrl": "@css:img.lazyload@data-src",
+      "kind": "@css:div.novel-stats>span.status@text",
+      "name": "@css:div.item-body>h4.novel-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "",
+      "name": ""
+    },
+    "ruleToc": {
+      "chapterList": "@css:ul.chapter-list>li",
+      "chapterName": "@css:strong.chapter-title@text",
+      "chapterUrl": "@css:a@href",
+      "isVolume": "@css:ul.chapter-list>li[data-volumeno]@data-volumeno",
+      "nextTocUrl": "@css:li.PagedList-skipToNext>a@href"
+    },
+    "searchUrl": "https://www.lightnovelpub.com/lnsearchlive,{\n  \"method\": \"POST\",\n  \"body\": \"inputContent={{key}}\"\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "LightNovelWorld",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.lightnovelworld.com",
+    "customOrder": 14,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "All::/stories-17091737/genre-all/order-new/status-all/p-{{page}}\nAction::/stories-17091737/genre-action/order-new/status-all/p-{{page}}\nAdventure::/stories-17091737/genre-adventure/order-new/status-all/p-{{page}}\nDrama::/stories-17091737/genre-drama/order-new/status-all/p-{{page}}\nFantasy::/stories-17091737/genre-fantasy/order-new/status-all/p-{{page}}\nHarem::/stories-17091737/genre-harem/order-new/status-all/p-{{page}}\nMartial Arts::/stories-17091737/genre-martial-arts/order-new/status-all/p-{{page}}\nMature::/stories-17091737/genre-mature/order-new/status-all/p-{{page}}\nRomance::/stories-17091737/genre-romance/order-new/status-all/p-{{page}}\nTragedy::/stories-17091737/genre-tragedy/order-new/status-all/p-{{page}}\nXuanhuan::/stories-17091737/genre-xuanhuan/order-new/status-all/p-{{page}}\nEcchi::/stories-17091737/genre-ecchi/order-new/status-all/p-{{page}}\nComedy::/stories-17091737/genre-comedy/order-new/status-all/p-{{page}}\nSlice of Life::/stories-17091737/genre-slice-of-life/order-new/status-all/p-{{page}}\nMystery::/stories-17091737/genre-mystery/order-new/status-all/p-{{page}}\nSupernatural::/stories-17091737/genre-supernatural/order-new/status-all/p-{{page}}\nPsychological::/stories-17091737/genre-psychological/order-new/status-all/p-{{page}}\nSci-fi::/stories-17091737/genre-sci-fi/order-new/status-all/p-{{page}}\nXianxia::/stories-17091737/genre-xianxia/order-new/status-all/p-{{page}}\nSchool Life::/stories-17091737/genre-school-life/order-new/status-all/p-{{page}}\nJosei::/stories-17091737/genre-josei/order-new/status-all/p-{{page}}\nWuxia::/stories-17091737/genre-wuxia/order-new/status-all/p-{{page}}\nShounen::/stories-17091737/genre-shounen/order-new/status-all/p-{{page}}\nHorror::/stories-17091737/genre-horror/order-new/status-all/p-{{page}}\nMecha::/stories-17091737/genre-mecha/order-new/status-all/p-{{page}}\nHistorical::/stories-17091737/genre-historical/order-new/status-all/p-{{page}}\nShoujo::/stories-17091737/genre-shoujo/order-new/status-all/p-{{page}}\nAdult::/stories-17091737/genre-adult/order-new/status-all/p-{{page}}\nSeinen::/stories-17091737/genre-seinen/order-new/status-all/p-{{page}}\nSports::/stories-17091737/genre-sports/order-new/status-all/p-{{page}}\nLolicon::/stories-17091737/genre-lolicon/order-new/status-all/p-{{page}}\nGender Bender::/stories-17091737/genre-gender-bender/order-new/status-all/p-{{page}}\nShounen Ai::/stories-17091737/genre-shounen-ai/order-new/status-all/p-{{page}}\nYaoi::/stories-17091737/genre-yaoi/order-new/status-all/p-{{page}}\nVideo Games::/stories-17091737/genre-video-games/order-new/status-all/p-{{page}}\nSmut::/stories-17091737/genre-smut/order-new/status-all/p-{{page}}\nMagical Realism::/stories-17091737/genre-magical-realism/order-new/status-all/p-{{page}}\nEastern Fantasy::/stories-17091737/genre-eastern-fantasy/order-new/status-all/p-{{page}}\nContemporary Romance::/stories-17091737/genre-contemporary-romance/order-new/status-all/p-{{page}}\nFantasy Romance::/stories-17091737/genre-fantasy-romance/order-new/status-all/p-{{page}}\nShoujo Ai::/stories-17091737/genre-shoujo-ai/order-new/status-all/p-{{page}}\nYuri::/stories-17091737/genre-yuri/order-new/status-all/p-{{page}}",
+    "lastUpdateTime": 1700454712537,
+    "loginUrl": "https://www.lightnovelworld.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author a span@text",
+      "coverUrl": ".cover img@data-src##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "intro": ".summary .content p@html",
+      "kind": ".categories ul li@text",
+      "lastChapter": ".content-nav .latest@text",
+      "name": ".main-head h1@text",
+      "tocUrl": ".content-nav > a@href##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}"
+    },
+    "ruleContent": {
+      "content": "#chapter-container p@html"
+    },
+    "ruleExplore": {
+      "bookList": ".novel-list li",
+      "bookUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "coverUrl": ".novel-cover img@data-src##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "name": "h4@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "",
+      "bookList": "<js>JSON.parse(result).resultview</js>@@ul li",
+      "bookUrl": "@@a@href##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "checkKeyWord": "MARVEL: GAME MAKER SYSTEM",
+      "coverUrl": "@@img@src##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "kind": "",
+      "lastChapter": "",
+      "name": "@@h4@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list li",
+      "chapterName": ".chapter-title@text",
+      "chapterUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "nextTocUrl": ".PagedList-skipToNext a@href##$##,{\"headers\":{\"Referer\": \"https://www.lightnovelworld.com/\"}}",
+      "updateTime": ".chapter-update@text"
+    },
+    "searchUrl": "@js:\nhtml = java.ajax(`https://www.lightnovelworld.com/search,{\"headers\": {\"Referer\": \"https://www.lightnovelworld.com/\"}}`)\nsoup = org.jsoup.Jsoup.parse(html)\nLNRequestVerifyToken = soup.select(\"input[name='__LNRequestVerifyToken']\").attr(\"value\")\n\noptions = {\n\"method\": \"POST\",\n\"body\": \"inputContent={{key}}\",\n\"headers\": {\n\"Referer\": \"https://www.lightnovelworld.com/search\",\n\"X-Requested-With\": \"XMLHttpRequest\",\n\"LNRequestVerifyToken\": LNRequestVerifyToken \n}\n}\n\n\"/lnsearchlive,\" + JSON.stringify(options)",
+    "weight": 0
+  },
+  {
+    "bookSourceName": "MTLFanfic",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://mtlfanfic.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Latest::novel/?m_orderby=latest",
+    "lastUpdateTime": 1718450029644,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "name": "@css:div.profile-manga h1@text"
+    },
+    "ruleContent": {
+      "content": "@css:div.reading-content p@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.page-item-detail",
+      "bookUrl": "@css:a@href",
+      "name": "@css:a@title"
+    },
+    "ruleReview": {},
+    "ruleSearch": {},
+    "ruleToc": {
+      "chapterList": "-li.wp-manga-chapter",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "mtlnovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://mtlnovel.com",
+    "customOrder": 35,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "New::genre/page/{{page}}\nAction::/genre/action/page/{{page}}\nAdult::/genre/adult/page/{{page}}\nAdventure::/genre/adventure/page/{{page}}\nComedy::/genre/comedy/page/{{page}}\nDrama::/genre/drama/page/{{page}}\nEcchi::/genre/ecchi/page/{{page}}\nErciyuan::/genre/erciyuan/page/{{page}}\nFan-fiction::/genre/fan-fiction/page/{{page}}\nFantasy::/genre/fantasy/page/{{page}}\nGame::/genre/game/page/{{page}}\nGender-bender::/genre/gender-bender/page/{{page}}\nHarem::/genre/harem/page/{{page}}\nHistorical::/genre/historical/page/{{page}}\nHorror::/genre/horror/page/{{page}}\nJosei::/genre/josei/page/{{page}}\nMartial-arts::/genre/martial-arts/page/{{page}}\nMature::/genre/mature/page/{{page}}\nMecha::/genre/mecha/page/{{page}}\nMilitary::/genre/military/page/{{page}}\nMystery::/genre/mystery/page/{{page}}\nPsychological::/genre/psychological/page/{{page}}\nRomance::/genre/romance/page/{{page}}\nSchool-life::/genre/school-life/page/{{page}}\nSci-fi::/genre/sci-fi/page/{{page}}\nSeinen::/genre/seinen/page/{{page}}\nShoujo::/genre/shoujo/page/{{page}}\nShoujo-ai::/genre/shoujo-ai/page/{{page}}\nShounen::/genre/shounen/page/{{page}}\nShounen-ai::/genre/shounen-ai/page/{{page}}\nSlice-of-life::/genre/slice-of-life/page/{{page}}\nSmut::/genre/smut/page/{{page}}\nSports::/genre/sports/page/{{page}}\nSupernatural::/genre/supernatural/page/{{page}}\nTragedy::/genre/tragedy/page/{{page}}\nTwo-dimensional::/genre/two-dimensional/page/{{page}}\nUrban-life::/genre/urban-life/page/{{page}}\nWuxia::/genre/wuxia/page/{{page}}\nXianxia::/genre/xianxia/page/{{page}}\nXuanhuan::/genre/xuanhuan/page/{{page}}\nYaoi::/genre/yaoi/page/{{page}}\nYuri::/genre/yuri/page/{{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"\n}",
+    "lastUpdateTime": 1686360224310,
+    "loginUrl": "https://mtlnovel.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:td#author@text",
+      "coverUrl": ".nov-head amp-img.0@src",
+      "downloadUrls": "",
+      "init": "",
+      "intro": "@css:div.desc>p@text",
+      "kind": "@css:div#currentgen>a@text",
+      "lastChapter": "",
+      "name": "",
+      "tocUrl": "@css:a.view-all@href",
+      "wordCount": "@css:div#currentgen>a:matches(Yaoi|Yuri|Shounen\\ Ai|Shoujo\\ Ai)@text##Yaoi|Yuri|Shounen\\ Ai|Shoujo\\ Ai##LGBTQ ALERT!"
+    },
+    "ruleContent": {
+      "content": "@css:p@text"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.post-content>div.box",
+      "bookUrl": "@css:a@href",
+      "coverUrl": "@css:a>amp-img@src##.webp",
+      "intro": "",
+      "kind": "@css:span.views-icon@text##views##Views | Star",
+      "lastChapter": "",
+      "name": "@css:div.caption>a.list-title@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "",
+      "bookList": "$.items[:1].results[*]",
+      "bookUrl": "$.permalink##\\",
+      "coverUrl": "$.thumbnail##\\",
+      "intro": "",
+      "kind": "",
+      "name": "$.title##<*.strong>"
+    },
+    "ruleToc": {
+      "chapterList": "-div.ch-list>p>a",
+      "chapterName": ".ch-link@text",
+      "chapterUrl": ".ch-link@href"
+    },
+    "searchUrl": "/wp-admin/admin-ajax.php?action=autosuggest&q={{key}}&__amp_source_origin=https%3A%2F%2Fwww.mtlnovel.com",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "Broken",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "NovelFulll",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novelfulll.com",
+    "customOrder": 5,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "shounen::/genre/shounen?page={{page}}\nharem::/genre/harem?page={{page}}\ncomedy::/genre/comedy?page={{page}}\nmartial-arts::/genre/martial-arts?page={{page}}\nschool-life::/genre/school-life?page={{page}}\nmystery::/genre/mystery?page={{page}}\nshoujo::/genre/shoujo?page={{page}}\nromance::/genre/romance?page={{page}}\nsci-fi::/genre/sci-fi?page={{page}}\ngender-bender::/genre/gender-bender?page={{page}}\nmature::/genre/mature?page={{page}}\nfantasy::/genre/fantasy?page={{page}}\nhorror::/genre/horror?page={{page}}\ndrama::/genre/drama?page={{page}}\ntragedy::/genre/tragedy?page={{page}}\nsupernatural::/genre/supernatural?page={{page}}\necchi::/genre/ecchi?page={{page}}\nxuanhuan::/genre/xuanhuan?page={{page}}\nadventure::/genre/adventure?page={{page}}\naction::/genre/action?page={{page}}\npsychological::/genre/psychological?page={{page}}\nxianxia::/genre/xianxia?page={{page}}\nwuxia::/genre/wuxia?page={{page}}\nhistorical::/genre/historical?page={{page}}\nslice-of-life::/genre/slice-of-life?page={{page}}\nseinen::/genre/seinen?page={{page}}\nlolicon::/genre/lolicon?page={{page}}\nadult::/genre/adult?page={{page}}\njosei::/genre/josei?page={{page}}\nsports::/genre/sports?page={{page}}\nsmut::/genre/smut?page={{page}}\nmecha::/genre/mecha?page={{page}}\nyaoi::/genre/yaoi?page={{page}}\nshounen-ai::/genre/shounen-ai?page={{page}}\nhistory::/genre/history?page={{page}}\nmartial::/genre/martial?page={{page}}",
+    "header": "{\n\"Referer\": \"https://novelfulll.com/\",\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 12; Nexus 5X Build/NRD90M); wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/96.0.4664.104 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": 1718533930825,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "init": "",
+      "intro": "@css:div.desc-text>p@text",
+      "kind": "@css:div.info>div:contains(genre)>a@text"
+    },
+    "ruleContent": {
+      "content": "@css:div>p@text"
+    },
+    "ruleExplore": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(list)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href",
+      "coverUrl": "@css:div>img@src",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(search)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href## ##%20",
+      "checkKeyWord": "Villain",
+      "coverUrl": "@css:div>img@src",
+      "kind": "",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:ul.list-chapter>li",
+      "chapterName": "@css:a>span.chapter-text@text",
+      "chapterUrl": "@css:a@href##^##https://novelfulll.com",
+      "nextTocUrl": "@css:li.next>a@href##^##https://novelfulll.com"
+    },
+    "searchUrl": "/book/search.html?page_num={{page}}&keyword={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "NovelFull",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novelfull.com",
+    "customOrder": 9,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "shounen::/genre/shounen?page={{page}}\nharem::/genre/harem?page={{page}}\ncomedy::/genre/comedy?page={{page}}\nmartial-arts::/genre/martial-arts?page={{page}}\nschool-life::/genre/school-life?page={{page}}\nmystery::/genre/mystery?page={{page}}\nshoujo::/genre/shoujo?page={{page}}\nromance::/genre/romance?page={{page}}\nsci-fi::/genre/sci-fi?page={{page}}\ngender-bender::/genre/gender-bender?page={{page}}\nmature::/genre/mature?page={{page}}\nfantasy::/genre/fantasy?page={{page}}\nhorror::/genre/horror?page={{page}}\ndrama::/genre/drama?page={{page}}\ntragedy::/genre/tragedy?page={{page}}\nsupernatural::/genre/supernatural?page={{page}}\necchi::/genre/ecchi?page={{page}}\nxuanhuan::/genre/xuanhuan?page={{page}}\nadventure::/genre/adventure?page={{page}}\naction::/genre/action?page={{page}}\npsychological::/genre/psychological?page={{page}}\nxianxia::/genre/xianxia?page={{page}}\nwuxia::/genre/wuxia?page={{page}}\nhistorical::/genre/historical?page={{page}}\nslice-of-life::/genre/slice-of-life?page={{page}}\nseinen::/genre/seinen?page={{page}}\nlolicon::/genre/lolicon?page={{page}}\nadult::/genre/adult?page={{page}}\njosei::/genre/josei?page={{page}}\nsports::/genre/sports?page={{page}}\nsmut::/genre/smut?page={{page}}\nmecha::/genre/mecha?page={{page}}\nyaoi::/genre/yaoi?page={{page}}\nshounen-ai::/genre/shounen-ai?page={{page}}\nhistory::/genre/history?page={{page}}\nmartial::/genre/martial?page={{page}}",
+    "lastUpdateTime": 1693996656025,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "init": "",
+      "intro": "@css:div.desc-text>p@text",
+      "kind": "@css:div.info>div:contains(genre)>a@text"
+    },
+    "ruleContent": {
+      "content": "@css:div#chapter-content p@text"
+    },
+    "ruleExplore": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(list)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href",
+      "coverUrl": "@css:div>img@src",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:span.author@text",
+      "bookList": "@css:div.list-truyen:contains(search)>div.row",
+      "bookUrl": "@css:h3.truyen-title>a@href## ##%20",
+      "checkKeyWord": "Former",
+      "coverUrl": "@css:div>img@src",
+      "kind": "",
+      "lastChapter": "@css:div>a@text",
+      "name": "@css:h3.truyen-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:ul.list-chapter>li",
+      "chapterName": "@css:a@text",
+      "chapterUrl": "@css:a@href##^##https://novelfull.com",
+      "nextTocUrl": "@css:li.next>a@href##^##https://novelfull.com"
+    },
+    "searchUrl": "/search?keyword={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "Panda Novel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.panda-novel.com",
+    "concurrentRate": "",
+    "customOrder": 17,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "All::/browsenovel/all\nAction::/browsenovel/action\nAdult::/browsenovel/adult\nAdventure::/browsenovel/adventure\nComedy::/browsenovel/comedy\nCompetitive Sports::/browsenovel/competitive-sports\nContemporary Romance::/browsenovel/contemporary-romance\nDetective::/browsenovel/detective\nDrama::/browsenovel/drama\nEastern Fantasy::/browsenovel/eastern-fantasy\nEcchi::/browsenovel/ecchi\nFantasy::/browsenovel/fantasy\nFantasy Romance::/browsenovel/fantasy-romance\nGame::/browsenovel/game\nGender Bender::/browsenovel/gender-bender\nHarem::/browsenovel/harem\nHistorical::/browsenovel/historical\nHistorical Romance::/browsenovel/historical-romance\nHorror::/browsenovel/horror\nJosei::/browsenovel/josei\nLGBT::/browsenovel/lgbt\nLolicon::/browsenovel/lolicon\nMagic::/browsenovel/magic\nMagical Realism::/browsenovel/magical-realism\nMartial Arts::/browsenovel/martial-arts\nMature::/browsenovel/mature\nMecha::/browsenovel/mecha\nMilitary::/browsenovel/military\nModern Life::/browsenovel/modern-life\nMystery::/browsenovel/mystery\nPsychological::/browsenovel/psychological\nRealistic Fiction::/browsenovel/realistic-fiction\nReincarnation::/browsenovel/reincarnation\nRomance::/browsenovel/romance\nSchool Life::/browsenovel/school-life\nSci-fi::/browsenovel/sci_fi\nScience fiction::/browsenovel/science-fiction\nSecret::/browsenovel/secret\nSeinen::/browsenovel/seinen\nShoujo::/browsenovel/shoujo\nShoujo Ai::/browsenovel/shoujo-ai\nShounen::/browsenovel/shounen\nShounen Ai::/browsenovel/shounen-ai\nSlice of Life::/browsenovel/slice-of-life\nSmut::/browsenovel/smut\nSports::/browsenovel/sports\nSupernatural::/browsenovel/supernatural\nSuspense::/browsenovel/suspense\nTerror::/browsenovel/terror\nTragedy::/browsenovel/tragedy\nVideo Games::/browsenovel/video-games\nWar::/browsenovel/war\nWuxia::/browsenovel/wuxia\nXianxia::/browsenovel/xianxia\nXuanhuan::/browsenovel/xuanhuan\nYaoi::/browsenovel/yaoi\nYuri::/browsenovel/yuri",
+    "lastUpdateTime": 1678689715846,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": ".novel-cover i@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
+      "intro": "dt:containsOwn(synopsis) + dd@html",
+      "tocUrl": "<js>\nbookId = String(result).match(/bookId: (\\d+),/)[1];\njava.put(\"bookId\", bookId)\noptions = {\n  \"headers\": {\n  \"Referer\": \"https://www.panda-novel.com/\"\n  }\n};\n`https://www.panda-novel.com/api/book/chapters/${bookId}/1?_=${new Date().getTime()},${JSON.stringify(options)}`\n</js>"
+    },
+    "ruleContent": {
+      "content": "#novelArticle2@html"
+    },
+    "ruleExplore": {
+      "author": "h5@text",
+      "bookList": "ul.novel-ul li",
+      "bookUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
+      "coverUrl": ".novel-cover i@v-lazy:background-image##'(.*?)'##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
+      "intro": "a@text",
+      "name": "h4@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "h5@text",
+      "bookList": "ul.novel-ul li",
+      "bookUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
+      "checkKeyWord": "Unlimited Items Shop System",
+      "coverUrl": ".novel-cover i@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
+      "intro": "a@text",
+      "kind": "",
+      "name": "h4@text"
+    },
+    "ruleToc": {
+      "chapterList": "$.data.list.[*]",
+      "chapterName": "$.name",
+      "chapterUrl": "$.chapterUrl##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
+      "nextTocUrl": "$.data.selectNumList\n@js:\nbookId = java.get(\"bookId\")\noptions = {\n  \"headers\": {\n  \"Referer\": \"https://www.panda-novel.com/\"\n  }\n};\nrand = Math.floor(Math.random() * 100)\nresult.toArray().slice(1).map(p => `https://www.panda-novel.com/api/book/chapters/${bookId}/${p}?_=${new Date().getTime() + rand   * Number(p)},${JSON.stringify(options)}`)"
+    },
+    "searchUrl": "/search/{{key}},{\"headers\":{\"Referer\": \"https://www.panda-novel.com/presearch\"}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "Ranobes",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://ranobes.top",
+    "concurrentRate": "3/1000",
+    "customOrder": 18,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": 1693882053781,
+    "loginUrl": "https://ranobes.net/kontol-terbang",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
+      "coverUrl": ".r-fullstory-poster img@src##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "init": "@js:\na = java.getString(\".reason #content@text\")\nif (a.includes(\"Loading...\")) {\nbookUrl = java.get(\"bookUrl\") + `,{\"webView\": true, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`\njava.ajax(bookUrl)\n} else {\nresult\n}\n",
+      "intro": ".r-desription .moreless__full@html",
+      "kind": "#mc-fs-genre a@text",
+      "name": "meta[property=og:title]@content",
+      "tocUrl": ".r-fullstory-chapters-foot > a.1@href<js>java.put(\"chapterUrl\", result)</js>##$##,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}"
+    },
+    "ruleContent": {
+      "content": "#arrticle@html"
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "#dle-content > article",
+      "bookUrl": "a@href<js>java.put(\"bookUrl\", result)</js>##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "checkKeyWord": "city",
+      "coverUrl": ".cont-in figure@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://ranobes.net/\"}}###",
+      "intro": ".cont-in@text",
+      "kind": ".r-rate.1@text",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": "-script:containsData(window.__DATA__ = )\n<js>\njson = String(result.first().data()).replace(/^window.__DATA__ = /, '')\njava.put('pages', JSON.parse(json).pages_count.toString())\njson\n</js>$.chapters.[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "$.link##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "nextTocUrl": "@js:\npages = Number(java.get(\"pages\"))\nchapterUrl = java.get(\"chapterUrl\")\nurls = []\nfor (i=2; i <= pages; i++) {\nurls.push(`${chapterUrl }page/${i}/,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`)\n}\nurls"
+    },
+    "searchUrl": "/index.php?do=search,{\n\"method\": \"POST\",\n\"body\": \"do=search&subaction=search&search_start=0&full_search=0&result_from=1&story={{key}}\",\n\"headers\":{\"Referer\": \"https://ranobes.net/\"}\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "Partial",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "RoyalRoad",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.royalroad.com/",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Rising-Stars::fictions/rising-stars",
+    "lastUpdateTime": 1718533904582,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": "@css:div.hidden-content>p@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "@css:div.chapter-content@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "checkKeyWord": "template",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:table#chapters>tbody>tr",
+      "chapterName": "@css:tr>td>a@text##.*ago",
+      "chapterUrl": "@css:tr>td>a@href"
+    },
+    "searchUrl": "fictions/search?title={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "Thx YiAnnings-pills for fixing this source(those cookie things).",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "Scribblehub",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.scribblehub.com",
+    "bookUrlPattern": "",
+    "concurrentRate": "",
+    "customOrder": 37,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Weekly-rank::/series-ranking/?sort=5&order=2&pg={{page}}\nDaily-rank::/series-ranking/?sort=5&order=1&pg={{page}}\nAction::/genre/action/?pg={{page}}\nAdult::/genre/adult/?pg={{page}}\nAdventure::/genre/adventure/?pg={{page}}\nBoys-love::/genre/boys-love/?pg={{page}}\nComedy::/genre/comedy/?pg={{page}}\nDrama::/genre/drama/?pg={{page}}\nEcchi::/genre/ecchi/?pg={{page}}\nFanfiction::/genre/fanfiction/?pg={{page}}\nFantasy::/genre/fantasy/?pg={{page}}\nGender-bender::/genre/gender-bender/?pg={{page}}\nGirls-love::/genre/girls-love/?pg={{page}}\nHarem::/genre/harem/?pg={{page}}\nHistorical::/genre/historical/?pg={{page}}\nHorror::/genre/horror/?pg={{page}}\nIsekai::/genre/isekai/?pg={{page}}\nJosei::/genre/josei/?pg={{page}}\nLitrpg::/genre/litrpg/?pg={{page}}\nMartial-arts::/genre/martial-arts/?pg={{page}}\nMature::/genre/mature/?pg={{page}}\nMecha::/genre/mecha/?pg={{page}}\nMystery::/genre/mystery/?pg={{page}}\nPsychological::/genre/psychological/?pg={{page}}\nRomance::/genre/romance/?pg={{page}}\nSchool-life::/genre/school-life/?pg={{page}}\nSci-fi::/genre/sci-fi/?pg={{page}}\nSeinen::/genre/seinen/?pg={{page}}\nSlice-of-life::/genre/slice-of-life/?pg={{page}}\nSmut::/genre/smut/?pg={{page}}\nSports::/genre/sports/?pg={{page}}\nSupernatural::/genre/supernatural/?pg={{page}}\nTragedy::/genre/tragedy/?pg={{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\",\n  \"Cookie\":\"toc_sorder=asc; toc_show=1000000;\"\n}",
+    "lastUpdateTime": 1707780485023,
+    "loginCheckJs": "",
+    "loginUi": "",
+    "loginUrl": "https://www.scribblehub.com",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:span.auth_name_fic@text",
+      "coverUrl": ".fic_image > img@src",
+      "init": "",
+      "intro": "@css:div.wi_fic_desc@text##more>>|<<less",
+      "kind": "@css:a.fic_genre@text",
+      "name": "@css:div.fic_title@text",
+      "tocUrl": "/wp-admin/admin-ajax.php,{\n  \"method\": \"POST\",\n  \"body\": \"action=wi_getreleases_pagination&pagenum=1&mypostid={{java.get('bookid')}}\"\n}"
+    },
+    "ruleContent": {
+      "content": ".chp_raw@html"
+    },
+    "ruleExplore": {
+      "author": "@css:div.search_stats>span.nl_stat:eq(8) a@text",
+      "bookList": "@css:div.search_main_box",
+      "bookUrl": "@css:div.search_title>a@href@put:{bookid:\"span[id]@id##^...\"}",
+      "coverUrl": "@css:img@src",
+      "kind": "@css:div.search_genre>a@text",
+      "name": "@css:div.search_title>a@text",
+      "wordCount": "@css:div.search_stats>span.nl_stat:eq(6)@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "@css:div.search_stats>span.nl_stat:eq(8)@text",
+      "bookList": "@css:div.search_main_box",
+      "bookUrl": "@css:div.search_title>a@href@put:{bookid:\"span[id]@id##^...\"}",
+      "checkKeyWord": "field",
+      "coverUrl": "@css:img@src",
+      "kind": "@css:div.search_genre>a@text",
+      "name": "@css:div.search_title>a@text",
+      "wordCount": "@css:div.search_stats>span.nl_stat:eq(6)@text"
+    },
+    "ruleToc": {
+      "chapterList": ".toc_w",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/?s={{key}}&post_type=fictionposts",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "🌐 WuXiaWorldSite",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://wuxiaworld.site",
+    "customOrder": 25,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "All总点击榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>\nMost Viewed总阅读榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>?m_orderby=views\nTrending流行榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>?m_orderby=trending\nAction动作::https://wuxiaworld.site/genre/action/<,page/{{page}}/>\nAdventure冒险::https://wuxiaworld.site/genre/adventure/<,page/{{page}}/>\nComedy喜剧::https://wuxiaworld.site/genre/Comedy/<,page/{{page}}/>\nDrama戏剧::https://wuxiaworld.site/genre/Drama/<,page/{{page}}/>\nEcchi恋爱::https://wuxiaworld.site/genre/ecchi/<,page/{{page}}/>\nTragedy悲剧::https://wuxiaworld.site/genre/tragedy/<,page/{{page}}/>\nXuanHuan玄幻::https://wuxiaworld.site/genre/xuanhuan/<,page/{{page}}/>\nWuXia武侠::https://wuxiaworld.site/genre/wuxia/<,page/{{page}}/>\nXianXia仙侠::https://wuxiaworld.site/genre/xianxia/<,page/{{page}}/>\nFantasy奇幻::https://wuxiaworld.site/genre/Fantasy/<,page/{{page}}/>\nHarem种马::https://wuxiaworld.site/genre/harem/<,page/{{page}}/>\nMartial Arts武术::https://wuxiaworld.site/genre/martial-arts/<,page/{{page}}/>\nJosei::https://wuxiaworld.site/genre/josei/<,page/{{page}}/>\nGender Bender双性::https://wuxiaworld.site/genre/Gender-Bender/<,page/{{page}}/>\nHistorical历史::https://wuxiaworld.site/genre/Historical/<,page/{{page}}/>\nHorror恐怖::https://wuxiaworld.site/genre/Horror/<,page/{{page}}/>\nMature成人::https://wuxiaworld.site/genre/mature/<,page/{{page}}/>\nMecha机甲::https://wuxiaworld.site/genre/mecha/<,page/{{page}}/>\nMystery神秘::https://wuxiaworld.site/genre/mystery/<,page/{{page}}/>\nPsychological心理学::https://wuxiaworld.site/genre/Psychological/<,page/{{page}}/>\nRomance浪漫::https://wuxiaworld.site/genre/Romance/<,page/{{page}}/>\nSchool Life校园生活::https://wuxiaworld.site/genre/school-life/<,page/{{page}}/>\nSci-fi科幻::https://wuxiaworld.site/genre/sci-fi/<,page/{{page}}/>\nSeinen年轻人::https://wuxiaworld.site/genre/Seinen/<,page/{{page}}/>\nShoujo女孩::https://wuxiaworld.site/genre/shoujo/<,page/{{page}}/>\nShounen男孩::https://wuxiaworld.site/genre/shounen/<,page/{{page}}/>\nSlice Of Life生活::https://wuxiaworld.site/genre/Slice-of-life/<,page/{{page}}/>\nSports体育::https://wuxiaworld.site/genre/sports/<,page/{{page}}/>\nSupernatural超自然::https://wuxiaworld.site/genre/Supernatural/<,page/{{page}}/>",
+    "lastUpdateTime": 1678689366333,
+    "respondTime": 200288,
+    "ruleBookInfo": {
+      "author": "class.author-content.0@tag.a@text",
+      "coverUrl": ".summary_image img@data-src",
+      "intro": ".summary__content@html##You’re Reading “.*?” on WuxiaWorld\\.Site",
+      "kind": "class.genres-content.0@tag.a@text",
+      "name": "class.breadcrumb.0@tag.li.1@text",
+      "tocUrl": "@js:\noptions = {\n\"method\": \"POST\",\n\"headers\": {\n    \"Referer\": baseUrl,\n    \"X-Requested-With\": \"XMLHttpRequest\"\n  }\n}\n\nbaseUrl+\"ajax/chapters/,\" + JSON.stringify(options)"
+    },
+    "ruleContent": {
+      "content": ".text-left@html"
+    },
+    "ruleExplore": {
+      "bookList": ".page-item-detail",
+      "bookUrl": "tag.a.0@href",
+      "coverUrl": "img@data-src",
+      "intro": "",
+      "kind": "tag.span.1@text",
+      "lastChapter": ".chapter-item span.0@text",
+      "name": "h3@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": ".mg_author .summary-content@text",
+      "bookList": ".c-tabs-item .c-tabs-item__content",
+      "bookUrl": "tag.a.0@href",
+      "checkKeyWord": "God",
+      "coverUrl": ".tab-thumb img@data-src",
+      "kind": ".mg_genres  .summary-content a@text",
+      "lastChapter": ".latest-chap .chapter@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "li a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://wuxiaworld.site/?s={{key}}&post_type=wp-manga",
+    "weight": 0
+  }
+]

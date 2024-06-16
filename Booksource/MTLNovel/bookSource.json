@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "mtlnovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://mtlnovel.com",
+    "customOrder": 35,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "New::genre/page/{{page}}\nAction::/genre/action/page/{{page}}\nAdult::/genre/adult/page/{{page}}\nAdventure::/genre/adventure/page/{{page}}\nComedy::/genre/comedy/page/{{page}}\nDrama::/genre/drama/page/{{page}}\nEcchi::/genre/ecchi/page/{{page}}\nErciyuan::/genre/erciyuan/page/{{page}}\nFan-fiction::/genre/fan-fiction/page/{{page}}\nFantasy::/genre/fantasy/page/{{page}}\nGame::/genre/game/page/{{page}}\nGender-bender::/genre/gender-bender/page/{{page}}\nHarem::/genre/harem/page/{{page}}\nHistorical::/genre/historical/page/{{page}}\nHorror::/genre/horror/page/{{page}}\nJosei::/genre/josei/page/{{page}}\nMartial-arts::/genre/martial-arts/page/{{page}}\nMature::/genre/mature/page/{{page}}\nMecha::/genre/mecha/page/{{page}}\nMilitary::/genre/military/page/{{page}}\nMystery::/genre/mystery/page/{{page}}\nPsychological::/genre/psychological/page/{{page}}\nRomance::/genre/romance/page/{{page}}\nSchool-life::/genre/school-life/page/{{page}}\nSci-fi::/genre/sci-fi/page/{{page}}\nSeinen::/genre/seinen/page/{{page}}\nShoujo::/genre/shoujo/page/{{page}}\nShoujo-ai::/genre/shoujo-ai/page/{{page}}\nShounen::/genre/shounen/page/{{page}}\nShounen-ai::/genre/shounen-ai/page/{{page}}\nSlice-of-life::/genre/slice-of-life/page/{{page}}\nSmut::/genre/smut/page/{{page}}\nSports::/genre/sports/page/{{page}}\nSupernatural::/genre/supernatural/page/{{page}}\nTragedy::/genre/tragedy/page/{{page}}\nTwo-dimensional::/genre/two-dimensional/page/{{page}}\nUrban-life::/genre/urban-life/page/{{page}}\nWuxia::/genre/wuxia/page/{{page}}\nXianxia::/genre/xianxia/page/{{page}}\nXuanhuan::/genre/xuanhuan/page/{{page}}\nYaoi::/genre/yaoi/page/{{page}}\nYuri::/genre/yuri/page/{{page}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"\n}",
+    "lastUpdateTime": 1686360224310,
+    "loginUrl": "https://mtlnovel.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:td#author@text",
+      "coverUrl": ".nov-head amp-img.0@src",
+      "downloadUrls": "",
+      "init": "",
+      "intro": "@css:div.desc>p@text",
+      "kind": "@css:div#currentgen>a@text",
+      "lastChapter": "",
+      "name": "",
+      "tocUrl": "@css:a.view-all@href",
+      "wordCount": "@css:div#currentgen>a:matches(Yaoi|Yuri|Shounen\\ Ai|Shoujo\\ Ai)@text##Yaoi|Yuri|Shounen\\ Ai|Shoujo\\ Ai##LGBTQ ALERT!"
+    },
+    "ruleContent": {
+      "content": "@css:p@text"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.post-content>div.box",
+      "bookUrl": "@css:a@href",
+      "coverUrl": "@css:a>amp-img@src##.webp",
+      "intro": "",
+      "kind": "@css:span.views-icon@text##views##Views | Star",
+      "lastChapter": "",
+      "name": "@css:div.caption>a.list-title@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "",
+      "bookList": "$.items[:1].results[*]",
+      "bookUrl": "$.permalink##\\",
+      "coverUrl": "$.thumbnail##\\",
+      "intro": "",
+      "kind": "",
+      "name": "$.title##<*.strong>"
+    },
+    "ruleToc": {
+      "chapterList": "-div.ch-list>p>a",
+      "chapterName": ".ch-link@text",
+      "chapterUrl": ".ch-link@href"
+    },
+    "searchUrl": "/wp-admin/admin-ajax.php?action=autosuggest&q={{key}}&__amp_source_origin=https%3A%2F%2Fwww.mtlnovel.com",
+    "weight": 0
+  }
+]

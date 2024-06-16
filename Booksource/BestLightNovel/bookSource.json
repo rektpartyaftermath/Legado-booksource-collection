@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "BestLightNovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://bestlightnovel.com",
+    "customOrder": 22,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "RECENTLY UPDATED::https://bestlightnovel.com/novel_list?type=latest&category=all&state=all&page={{page}}\n\nCOMPLETED::https://bestlightnovel.com/novel_list?type=topview&category=all&state=completed&page={{page}}\n\nNEWEST::https://bestlightnovel.com/novel_list?type=newest&category=all&state=all&page={{page}}\n\nTOP VIEW::https://bestlightnovel.com/novel_list?type=topview&category=all&state=all&page={{page}}",
+    "lastUpdateTime": 1678689315037,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": "[property$=image]@content",
+      "intro": "[property$=description]@content\n##(^|[。！？]+[”」）】]?)##$1<br>",
+      "lastChapter": ".chapter-list@a.0@text"
+    },
+    "ruleContent": {
+      "content": "#vung_doc>div.1@html||#vung_doc@html"
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "span.-3@text##Author :\\s*",
+      "bookList": ".update_item",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "my",
+      "coverUrl": "img@src",
+      "kind": "span.-2@text##Last updated :\\s*",
+      "lastChapter": ".chapter@text",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "-.chapter-list>div",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "updateTime": "span.1@text"
+    },
+    "searchUrl": "https://bestlightnovel.com/search_novels/{{key}}?page={{page}}",
+    "weight": 0
+  }
+]

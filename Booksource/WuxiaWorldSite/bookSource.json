@@ -1,0 +1,54 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "🌐 WuXiaWorldSite",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://wuxiaworld.site",
+    "customOrder": 25,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "All总点击榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>\nMost Viewed总阅读榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>?m_orderby=views\nTrending流行榜::https://wuxiaworld.site/novels-list/<,page/{{page}}/>?m_orderby=trending\nAction动作::https://wuxiaworld.site/genre/action/<,page/{{page}}/>\nAdventure冒险::https://wuxiaworld.site/genre/adventure/<,page/{{page}}/>\nComedy喜剧::https://wuxiaworld.site/genre/Comedy/<,page/{{page}}/>\nDrama戏剧::https://wuxiaworld.site/genre/Drama/<,page/{{page}}/>\nEcchi恋爱::https://wuxiaworld.site/genre/ecchi/<,page/{{page}}/>\nTragedy悲剧::https://wuxiaworld.site/genre/tragedy/<,page/{{page}}/>\nXuanHuan玄幻::https://wuxiaworld.site/genre/xuanhuan/<,page/{{page}}/>\nWuXia武侠::https://wuxiaworld.site/genre/wuxia/<,page/{{page}}/>\nXianXia仙侠::https://wuxiaworld.site/genre/xianxia/<,page/{{page}}/>\nFantasy奇幻::https://wuxiaworld.site/genre/Fantasy/<,page/{{page}}/>\nHarem种马::https://wuxiaworld.site/genre/harem/<,page/{{page}}/>\nMartial Arts武术::https://wuxiaworld.site/genre/martial-arts/<,page/{{page}}/>\nJosei::https://wuxiaworld.site/genre/josei/<,page/{{page}}/>\nGender Bender双性::https://wuxiaworld.site/genre/Gender-Bender/<,page/{{page}}/>\nHistorical历史::https://wuxiaworld.site/genre/Historical/<,page/{{page}}/>\nHorror恐怖::https://wuxiaworld.site/genre/Horror/<,page/{{page}}/>\nMature成人::https://wuxiaworld.site/genre/mature/<,page/{{page}}/>\nMecha机甲::https://wuxiaworld.site/genre/mecha/<,page/{{page}}/>\nMystery神秘::https://wuxiaworld.site/genre/mystery/<,page/{{page}}/>\nPsychological心理学::https://wuxiaworld.site/genre/Psychological/<,page/{{page}}/>\nRomance浪漫::https://wuxiaworld.site/genre/Romance/<,page/{{page}}/>\nSchool Life校园生活::https://wuxiaworld.site/genre/school-life/<,page/{{page}}/>\nSci-fi科幻::https://wuxiaworld.site/genre/sci-fi/<,page/{{page}}/>\nSeinen年轻人::https://wuxiaworld.site/genre/Seinen/<,page/{{page}}/>\nShoujo女孩::https://wuxiaworld.site/genre/shoujo/<,page/{{page}}/>\nShounen男孩::https://wuxiaworld.site/genre/shounen/<,page/{{page}}/>\nSlice Of Life生活::https://wuxiaworld.site/genre/Slice-of-life/<,page/{{page}}/>\nSports体育::https://wuxiaworld.site/genre/sports/<,page/{{page}}/>\nSupernatural超自然::https://wuxiaworld.site/genre/Supernatural/<,page/{{page}}/>",
+    "lastUpdateTime": 1678689366333,
+    "respondTime": 200288,
+    "ruleBookInfo": {
+      "author": "class.author-content.0@tag.a@text",
+      "coverUrl": ".summary_image img@data-src",
+      "intro": ".summary__content@html##You’re Reading “.*?” on WuxiaWorld\\.Site",
+      "kind": "class.genres-content.0@tag.a@text",
+      "name": "class.breadcrumb.0@tag.li.1@text",
+      "tocUrl": "@js:\noptions = {\n\"method\": \"POST\",\n\"headers\": {\n    \"Referer\": baseUrl,\n    \"X-Requested-With\": \"XMLHttpRequest\"\n  }\n}\n\nbaseUrl+\"ajax/chapters/,\" + JSON.stringify(options)"
+    },
+    "ruleContent": {
+      "content": ".text-left@html"
+    },
+    "ruleExplore": {
+      "bookList": ".page-item-detail",
+      "bookUrl": "tag.a.0@href",
+      "coverUrl": "img@data-src",
+      "intro": "",
+      "kind": "tag.span.1@text",
+      "lastChapter": ".chapter-item span.0@text",
+      "name": "h3@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": ".mg_author .summary-content@text",
+      "bookList": ".c-tabs-item .c-tabs-item__content",
+      "bookUrl": "tag.a.0@href",
+      "checkKeyWord": "God",
+      "coverUrl": ".tab-thumb img@data-src",
+      "kind": ".mg_genres  .summary-content a@text",
+      "lastChapter": ".latest-chap .chapter@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "li a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://wuxiaworld.site/?s={{key}}&post_type=wp-manga",
+    "weight": 0
+  }
+]

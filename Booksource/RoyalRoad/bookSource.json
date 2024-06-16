@@ -1,0 +1,42 @@
+[
+  {
+    "bookSourceComment": "Partial",
+    "bookSourceGroup": "English Source",
+    "bookSourceName": "RoyalRoad",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.royalroad.com/",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Rising-Stars::fictions/rising-stars",
+    "lastUpdateTime": 1718533904582,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": "@css:div.hidden-content>p@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "@css:div.chapter-content@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "@css:div.fiction-list-item",
+      "bookUrl": "@css:h2.fiction-title>a@href",
+      "checkKeyWord": "template",
+      "name": "@css:h2.fiction-title>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:table#chapters>tbody>tr",
+      "chapterName": "@css:tr>td>a@text##.*ago",
+      "chapterUrl": "@css:tr>td>a@href"
+    },
+    "searchUrl": "fictions/search?title={{key}}",
+    "weight": 0
+  }
+]

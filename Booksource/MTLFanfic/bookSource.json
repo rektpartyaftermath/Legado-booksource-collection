@@ -1,0 +1,33 @@
+[
+  {
+    "bookSourceName": "MTLFanfic",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://mtlfanfic.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Latest::novel/?m_orderby=latest",
+    "lastUpdateTime": 1718450029644,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "name": "@css:div.profile-manga h1@text"
+    },
+    "ruleContent": {
+      "content": "@css:div.reading-content p@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.page-item-detail",
+      "bookUrl": "@css:a@href",
+      "name": "@css:a@title"
+    },
+    "ruleReview": {},
+    "ruleSearch": {},
+    "ruleToc": {
+      "chapterList": "-li.wp-manga-chapter",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "weight": 0
+  }
+]

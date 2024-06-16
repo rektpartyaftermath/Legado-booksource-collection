@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceName": "Ranobes",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://ranobes.top",
+    "concurrentRate": "3/1000",
+    "customOrder": 18,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": 1693882053781,
+    "loginUrl": "https://ranobes.net/kontol-terbang",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
+      "coverUrl": ".r-fullstory-poster img@src##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "init": "@js:\na = java.getString(\".reason #content@text\")\nif (a.includes(\"Loading...\")) {\nbookUrl = java.get(\"bookUrl\") + `,{\"webView\": true, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`\njava.ajax(bookUrl)\n} else {\nresult\n}\n",
+      "intro": ".r-desription .moreless__full@html",
+      "kind": "#mc-fs-genre a@text",
+      "name": "meta[property=og:title]@content",
+      "tocUrl": ".r-fullstory-chapters-foot > a.1@href<js>java.put(\"chapterUrl\", result)</js>##$##,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}"
+    },
+    "ruleContent": {
+      "content": "#arrticle@html"
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "#dle-content > article",
+      "bookUrl": "a@href<js>java.put(\"bookUrl\", result)</js>##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "checkKeyWord": "city",
+      "coverUrl": ".cont-in figure@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://ranobes.net/\"}}###",
+      "intro": ".cont-in@text",
+      "kind": ".r-rate.1@text",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": "-script:containsData(window.__DATA__ = )\n<js>\njson = String(result.first().data()).replace(/^window.__DATA__ = /, '')\njava.put('pages', JSON.parse(json).pages_count.toString())\njson\n</js>$.chapters.[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "$.link##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
+      "nextTocUrl": "@js:\npages = Number(java.get(\"pages\"))\nchapterUrl = java.get(\"chapterUrl\")\nurls = []\nfor (i=2; i <= pages; i++) {\nurls.push(`${chapterUrl }page/${i}/,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`)\n}\nurls"
+    },
+    "searchUrl": "/index.php?do=search,{\n\"method\": \"POST\",\n\"body\": \"do=search&subaction=search&search_start=0&full_search=0&result_from=1&story={{key}}\",\n\"headers\":{\"Referer\": \"https://ranobes.net/\"}\n}",
+    "weight": 0
+  }
+]
