@@ -5,8 +5,6 @@ use
 make script that do:
 - merge all json done
 - make a list of the booksource
-
-change to using
-legado://import/bookSource?src=http://0.vern.cc/s/9oNA9hX-e8AvN_v1EuC7jw/zH.json
+	
 
 make get started with legado
