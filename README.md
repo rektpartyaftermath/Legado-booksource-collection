@@ -1,12 +1,6 @@
 # Legado booksource collection
 How to install all :
-- Copy this [link](https://raw.githubusercontent.com/rektpartyaftermath/Legado-booksource-collection/main/AllBooksource.json)
-- Open legado
-- Find import online
-- Paste then import
+- Click this [link](https://intradeus.github.io/http-protocol-redirector?r=legado://import/bookSource?src=https://raw.githubusercontent.com/rektpartyaftermath/Legado-booksource-collection/main/AllBooksource.json)
+- Choose booksource you want.
 
-Install individualy :
-- Find the booksource u want [here](List.md)
-- Copy the link
-- Find import online
-- Paste then import
+List all booksource [here](List.md)
