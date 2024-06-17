@@ -3,13 +3,8 @@ use
 - booksource-name/booksource.json
 
 make script that do:
-- make info file
-- merge all json
-	- first file echo [
-	- using sed
-	- remove [ and ]
-	- add , to the lastline
-	- last file echo ]
+- merge all json done
 - make a list of the booksource
+	
 
 make get started with legado
