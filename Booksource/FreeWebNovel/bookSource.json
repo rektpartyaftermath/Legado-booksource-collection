@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceGroup": "English",
+    "bookSourceName": "FreeWebNovel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://freewebnovel.com",
+    "concurrentRate": "",
+    "customOrder": 13,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "header": "{\n\"Referer\": \"https://freewebnovel.com\",\n\"Accept-Language\": \"en-US,en;q=0.5\"\n}",
+    "lastUpdateTime": 1718801756927,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "span[title=\"Author\"] + div a@text",
+      "coverUrl": ".m-imgtxt img@src",
+      "intro": ".m-desc .txt@html",
+      "kind": "span[title=\"Genre\"] + div a@text",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "#article p!-1@html##<h[45]>.*</h[45]>",
+      "replaceRegex": "",
+      "sourceRegex": "",
+      "title": ""
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": ".col-content .li-row",
+      "bookUrl": "a@href",
+      "checkKeyWord": "super",
+      "coverUrl": "img@src",
+      "kind": ".core span@text&&.desc .item.0@.right em@text&&.desc .item.1:2@.right a@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": ".m-newest2 .ul-list5 li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".page a:containsOwn(Next)@href"
+    },
+    "searchUrl": "/search/,{\n\"method\": \"POST\",\nbody=\"searchkey={{key}}\"\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceGroup": "English",
+    "bookSourceName": "NovelFire",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novelfire.net/",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "header": "{\n\"Referer\": \"https://novelfire.net/\"\n}",
+    "lastUpdateTime": 1718801461663,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author a span@text",
+      "coverUrl": ".cover img@data-src",
+      "init": "",
+      "intro": ".introduce .txt p!-1@html",
+      "kind": ".categories ul li@text&&.tags ul.content li@text",
+      "name": "h1.novel-title@text",
+      "tocUrl": ".chapter-latest-container@href"
+    },
+    "ruleContent": {
+      "content": "#content@html",
+      "imageStyle": "",
+      "replaceRegex": "##\\s*This chapter upload first at.*|Follow this channel https.*|<img src.*>|Please bookmark.*|Read Web Novels Online Free.*"
+    },
+    "ruleExplore": {},
+    "ruleReview": {},
+    "ruleSearch": {
+      "bookList": "<js>JSON.parse(result).html</js>@css:.novel-item",
+      "bookUrl": "@css:a@href",
+      "checkKeyWord": "Extra's Magic",
+      "coverUrl": "@css:img@src",
+      "kind": "@css:.novel-stats@text",
+      "name": "@css:.novel-title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".page-item.-2@text@js:\n// java.log(result)\njava.log(baseUrl)\npage = Number(result[0])\nlist = []\nif(!baseUrl.includes(\"?page=\")) {\nfor (i=2;i<=page;i++) {\nlist.push(baseUrl+\"?page=\"+i)\n}\n}\nlist\n\n"
+    },
+    "searchUrl": "/ajax/searchLive?inputContent={{key}},{\n\"headers\": {\n\"X-Requested-With\": \"XMLHttpRequest\"\n}\n}",
+    "weight": 0
+  }
+]

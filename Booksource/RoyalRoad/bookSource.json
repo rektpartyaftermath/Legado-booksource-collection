@@ -1,42 +1,53 @@
 [
   {
-    "bookSourceComment": "Partial",
-    "bookSourceGroup": "English Source",
-    "bookSourceName": "RoyalRoad",
+    "bookSourceGroup": "English",
+    "bookSourceName": "Royalroad",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.royalroad.com/",
-    "customOrder": 3,
+    "bookSourceUrl": "https://www.royalroad.com/home",
+    "customOrder": 4,
     "enabled": true,
-    "enabledCookieJar": true,
+    "enabledCookieJar": false,
     "enabledExplore": true,
-    "exploreUrl": "Rising-Stars::fictions/rising-stars",
-    "lastUpdateTime": 1718533904582,
+    "exploreUrl": "Rising Stars::/fictions/rising-stars\nBest Rated::/fictions/best-rated?page={{page}}\nComplete::/fictions/complete?page={{page}}\nLatest Update::/fictions/latest-updates?page={{page}}\nPopular This Week::/fictions/weekly-popular?page={{page}}",
+    "lastUpdateTime": 1715872983987,
+    "loginUrl": "https://www.royalroad.com/home",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "intro": "@css:div.hidden-content>p@text",
-      "tocUrl": ""
+      "author": ".fic-title h4 a@text",
+      "coverUrl": ".thumbnail@src",
+      "intro": ".description@html",
+      "kind": ".tags a@text",
+      "name": ".fic-title h1@text"
     },
     "ruleContent": {
-      "content": "@css:div.chapter-content@html"
+      "content": ".chapter-content@html",
+      "imageStyle": "",
+      "replaceRegex": "##Unauthorized.*|(?:Royal Road)?.*(Royal Road|Amazon).*|Stolen (story|novel); please report."
     },
     "ruleExplore": {
-      "bookList": "@css:div.fiction-list-item",
-      "bookUrl": "@css:h2.fiction-title>a@href",
-      "name": "@css:h2.fiction-title>a@text"
+      "bookList": ".fiction-list-item",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "",
+      "kind": ".tags a@text",
+      "name": "h2@text"
     },
     "ruleReview": {},
     "ruleSearch": {
-      "bookList": "@css:div.fiction-list-item",
-      "bookUrl": "@css:h2.fiction-title>a@href",
-      "checkKeyWord": "template",
-      "name": "@css:h2.fiction-title>a@text"
+      "bookList": ".fiction-list-item",
+      "bookUrl": "a@href",
+      "checkKeyWord": "super",
+      "coverUrl": "img@src",
+      "kind": ".tags a@text",
+      "name": "h2@text"
     },
     "ruleToc": {
-      "chapterList": "@css:table#chapters>tbody>tr",
-      "chapterName": "@css:tr>td>a@text##.*ago",
-      "chapterUrl": "@css:tr>td>a@href"
+      "chapterList": ".chapter-row",
+      "chapterName": "a.0@text",
+      "chapterUrl": "a.0@href",
+      "updateTime": ".text-right@text"
     },
-    "searchUrl": "fictions/search?title={{key}}",
+    "searchUrl": "https://www.royalroad.com/fictions/search?title={{key}}",
     "weight": 0
   }
 ]

@@ -1,0 +1,36 @@
+[
+  {
+    "bookSourceGroup": "English",
+    "bookSourceName": "Yong Library",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://yonglibrary.com",
+    "customOrder": 9,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "exploreUrl": "Novels::https://yonglibrary.com/",
+    "header": "{\n\"Referer\": \"https://yonglibrary.com/\"\n}",
+    "lastUpdateTime": 1708313758033,
+    "loginUrl": "https://yonglibrary.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": ".wp-block-post-featured-image > img@src"
+    },
+    "ruleContent": {
+      "content": ".entry-content > p@html"
+    },
+    "ruleExplore": {
+      "bookList": ".wp-block-page-list li a",
+      "bookUrl": "href",
+      "name": "text"
+    },
+    "ruleSearch": {},
+    "ruleToc": {
+      "chapterList": "-.wp-block-post-template li a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": ".wp-block-query-pagination-numbers a.-1@ownText@js:\nnum = result[0]\narr = []\nfor(var i = 2; i <= num; i++) {\narr.push(baseUrl+\"?query-8-page=\"+i)\n}\narr"
+    },
+    "weight": 0
+  }
+]
