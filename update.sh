@@ -8,3 +8,5 @@ do
 done
 # Merge all Booksource
 jq '.[0]' ./Booksource/*/*json | jq -s '.' > AllBooksource.json
+# Change grouping to English
+sed -i 's/"bookSourceGroup.*/"bookSourceGroup": "English",/g' ./Booksource/*/bookSource.json
