@@ -1,10 +1,79 @@
-export all working legado source to individual file done
-use
-- booksource-name/booksource.json
+Booksource fixes:
+AllNovelBin
+fix cover image not show up
+remove those nasty watermark
 
-make script that do:
-- merge all json done
-- make a list of the booksource
-	
+BestLightNovel
+add more discovery if possible
+add author and genre
+
+BoxNovel
+none
+
+DivineDaoLibrary
+add search
+add more discovery
+add genre
+
+FreeWebNovel
+add discovery
+
+HelScans
+add discovery
+add genre and author
+
+LightNovelPub
+add search
+have cloudflare scan
+
+LightNovelWorld
+none
+
+LightsNovel
+none
+
+MTLFanfic
+add search
+add discovery
+add everything else
+
+MTLNovel
+none
+
+NovelFire
+add discovery
+
+NovelFulll
+broken
+
+NovelFull
+none
+
+PandaNovel
+broken search
+
+Ranobes
+add discovery
+
+ReadNovelFull
+add discovery
+
+RoyalRoad
+none
+
+ScribbleHub
+none
+
+WebNovelWorld
+have cloudflare scan
+
+WuxiaWorldSite
+none
+
+YongLibrary
+add search
+add more discovery
+add author and genre
+
 
 make get started with legado
