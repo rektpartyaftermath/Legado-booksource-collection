@@ -9,9 +9,9 @@
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "Daily-update::sort/daily-update-novels?page={{page}}",
+    "exploreUrl": "Daily-update::sort/daily-update-novels?page={{page}}\nHot-ones::sort/hot-all-novel-bin?page={{page}}\nCompleted::sort/completed-all-novel-bin?page={{page}}\nMost-Popular::sort/popular-all-novel-bin?page={{page}}",
     "header": "{\n  \"User-Agent\": \"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10\"\n}",
-    "lastUpdateTime": 1708793785109,
+    "lastUpdateTime": 1724954084058,
     "loginUrl": "https://thenovelbin.org/",
     "respondTime": 180000,
     "ruleBookInfo": {
@@ -29,7 +29,7 @@
       "author": "@css:span.author@text",
       "bookList": "@css:div.list-novel>div.row",
       "bookUrl": "@css:h3>a@href",
-      "coverUrl": "@css:div>img@src",
+      "coverUrl": "@css:div>img@data-src",
       "lastChapter": "@css:div.text-info@text",
       "name": "@css:h3.novel-title@text"
     },
@@ -39,7 +39,7 @@
       "bookList": "@css:div.list-novel>div.row",
       "bookUrl": "@css:h3>a@href",
       "checkKeyWord": "city",
-      "coverUrl": "@css:div>img@src",
+      "coverUrl": "@css:div>img@data-src",
       "lastChapter": "@css:div.text-info@text",
       "name": "@css:h3.novel-title@text"
     },
@@ -53,7 +53,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "BestLightNovel",
     "bookSourceType": 0,
     "bookSourceUrl": "https://bestlightnovel.com",
@@ -95,7 +95,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "BoxNovel",
     "bookSourceType": 0,
     "bookSourceUrl": "https://boxnovel.com",
@@ -274,7 +274,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "English Source",
+    "bookSourceGroup": "English",
     "bookSourceName": "Lightnovelpub",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.lightnovelpub.com/",
@@ -325,7 +325,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "LightNovelWorld",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.lightnovelworld.com",
@@ -463,7 +463,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "English Source",
+    "bookSourceGroup": "English",
     "bookSourceName": "mtlnovel",
     "bookSourceType": 0,
     "bookSourceUrl": "https://mtlnovel.com",
@@ -565,7 +565,7 @@
   },
   {
     "bookSourceComment": "Broken",
-    "bookSourceGroup": "English Source",
+    "bookSourceGroup": "English",
     "bookSourceName": "NovelFulll",
     "bookSourceType": 0,
     "bookSourceUrl": "https://novelfulll.com",
@@ -615,7 +615,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "English Source",
+    "bookSourceGroup": "English",
     "bookSourceName": "NovelFull",
     "bookSourceType": 0,
     "bookSourceUrl": "https://novelfull.com",
@@ -664,7 +664,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "Panda Novel",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.panda-novel.com",
@@ -714,7 +714,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "Ranobes",
     "bookSourceType": 0,
     "bookSourceUrl": "https://ranobes.top",
@@ -856,7 +856,7 @@
   },
   {
     "bookSourceComment": "Thx YiAnnings-pills for fixing this source(those cookie things).",
-    "bookSourceGroup": "English Source",
+    "bookSourceGroup": "English",
     "bookSourceName": "Scribblehub",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.scribblehub.com",
@@ -968,7 +968,7 @@
   },
   {
     "bookSourceComment": "",
-    "bookSourceGroup": "Dari-mufridi",
+    "bookSourceGroup": "English",
     "bookSourceName": "🌐 WuXiaWorldSite",
     "bookSourceType": 0,
     "bookSourceUrl": "https://wuxiaworld.site",
