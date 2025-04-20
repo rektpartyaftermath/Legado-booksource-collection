@@ -1,4 +1,5 @@
 #!/bin/bash
+# This file should be run after adding new Booksource
 # Get list of all folder
 bookSourceList=$(ls ./Booksource)
 rm List.md
