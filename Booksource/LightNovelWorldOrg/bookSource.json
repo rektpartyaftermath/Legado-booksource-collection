@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceName": "LightNovelWorldOrg",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://lightnovelworld.org",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "New Update::https://lightnovelworld.org/updates/?page={{page}}",
+    "lastUpdateTime": 1754572138780,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": "@css:div.summary-content@text",
+      "name": "@css:h1.novel-title@text",
+      "tocUrl": "@css:div.content-card@onclick##location.href=|'"
+    },
+    "ruleContent": {
+      "content": "@css:div.chapter-text>p@html"
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": "@css:div.ranking-list>a",
+      "bookUrl": "@css:a@href",
+      "coverUrl": "@css:div.ranking-item-cover>img@src",
+      "name": "@css:h4.ranking-item-title@text"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.novels",
+      "bookUrl": "$.slug##^##/novel/",
+      "checkKeyWord": "city",
+      "coverUrl": "$.cover_path",
+      "kind": "$.genres",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "@css:div.chapter-card",
+      "chapterName": "@css:h3.chapter-title@text",
+      "chapterUrl": "@css:div.chapter-card@onclick##location.href=|'",
+      "nextTocUrl": "@css:a[title=\"Next Page\"]@href"
+    },
+    "searchUrl": "/api/search/?q={{key}}",
+    "weight": 0
+  }
+]
