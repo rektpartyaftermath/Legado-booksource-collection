@@ -1,52 +1,45 @@
-[
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "English",
-    "bookSourceName": "Panda Novel",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.panda-novel.com",
-    "concurrentRate": "",
-    "customOrder": 17,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "exploreUrl": "All::/browsenovel/all\nAction::/browsenovel/action\nAdult::/browsenovel/adult\nAdventure::/browsenovel/adventure\nComedy::/browsenovel/comedy\nCompetitive Sports::/browsenovel/competitive-sports\nContemporary Romance::/browsenovel/contemporary-romance\nDetective::/browsenovel/detective\nDrama::/browsenovel/drama\nEastern Fantasy::/browsenovel/eastern-fantasy\nEcchi::/browsenovel/ecchi\nFantasy::/browsenovel/fantasy\nFantasy Romance::/browsenovel/fantasy-romance\nGame::/browsenovel/game\nGender Bender::/browsenovel/gender-bender\nHarem::/browsenovel/harem\nHistorical::/browsenovel/historical\nHistorical Romance::/browsenovel/historical-romance\nHorror::/browsenovel/horror\nJosei::/browsenovel/josei\nLGBT::/browsenovel/lgbt\nLolicon::/browsenovel/lolicon\nMagic::/browsenovel/magic\nMagical Realism::/browsenovel/magical-realism\nMartial Arts::/browsenovel/martial-arts\nMature::/browsenovel/mature\nMecha::/browsenovel/mecha\nMilitary::/browsenovel/military\nModern Life::/browsenovel/modern-life\nMystery::/browsenovel/mystery\nPsychological::/browsenovel/psychological\nRealistic Fiction::/browsenovel/realistic-fiction\nReincarnation::/browsenovel/reincarnation\nRomance::/browsenovel/romance\nSchool Life::/browsenovel/school-life\nSci-fi::/browsenovel/sci_fi\nScience fiction::/browsenovel/science-fiction\nSecret::/browsenovel/secret\nSeinen::/browsenovel/seinen\nShoujo::/browsenovel/shoujo\nShoujo Ai::/browsenovel/shoujo-ai\nShounen::/browsenovel/shounen\nShounen Ai::/browsenovel/shounen-ai\nSlice of Life::/browsenovel/slice-of-life\nSmut::/browsenovel/smut\nSports::/browsenovel/sports\nSupernatural::/browsenovel/supernatural\nSuspense::/browsenovel/suspense\nTerror::/browsenovel/terror\nTragedy::/browsenovel/tragedy\nVideo Games::/browsenovel/video-games\nWar::/browsenovel/war\nWuxia::/browsenovel/wuxia\nXianxia::/browsenovel/xianxia\nXuanhuan::/browsenovel/xuanhuan\nYaoi::/browsenovel/yaoi\nYuri::/browsenovel/yuri",
-    "lastUpdateTime": 1678689715846,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "coverUrl": ".novel-cover i@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
-      "intro": "dt:containsOwn(synopsis) + dd@html",
-      "tocUrl": "<js>\nbookId = String(result).match(/bookId: (\\d+),/)[1];\njava.put(\"bookId\", bookId)\noptions = {\n  \"headers\": {\n  \"Referer\": \"https://www.panda-novel.com/\"\n  }\n};\n`https://www.panda-novel.com/api/book/chapters/${bookId}/1?_=${new Date().getTime()},${JSON.stringify(options)}`\n</js>"
-    },
-    "ruleContent": {
-      "content": "#novelArticle2@html"
-    },
-    "ruleExplore": {
-      "author": "h5@text",
-      "bookList": "ul.novel-ul li",
-      "bookUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
-      "coverUrl": ".novel-cover i@v-lazy:background-image##'(.*?)'##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
-      "intro": "a@text",
-      "name": "h4@text"
-    },
-    "ruleReview": {},
-    "ruleSearch": {
-      "author": "h5@text",
-      "bookList": "ul.novel-ul li",
-      "bookUrl": "a@href##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
-      "checkKeyWord": "Unlimited Items Shop System",
-      "coverUrl": ".novel-cover i@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://www.panda-novel.com/\"}}###",
-      "intro": "a@text",
-      "kind": "",
-      "name": "h4@text"
-    },
-    "ruleToc": {
-      "chapterList": "$.data.list.[*]",
-      "chapterName": "$.name",
-      "chapterUrl": "$.chapterUrl##$##,{\"headers\":{\"Referer\": \"https://www.panda-novel.com/\"}}",
-      "nextTocUrl": "$.data.selectNumList\n@js:\nbookId = java.get(\"bookId\")\noptions = {\n  \"headers\": {\n  \"Referer\": \"https://www.panda-novel.com/\"\n  }\n};\nrand = Math.floor(Math.random() * 100)\nresult.toArray().slice(1).map(p => `https://www.panda-novel.com/api/book/chapters/${bookId}/${p}?_=${new Date().getTime() + rand   * Number(p)},${JSON.stringify(options)}`)"
-    },
-    "searchUrl": "/search/{{key}},{\"headers\":{\"Referer\": \"https://www.panda-novel.com/presearch\"}}",
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "Panda Novel",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://pandanovel.co",
+  "customOrder": 16,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "exploreUrl": "New::/genre-all/sort-new/status-all/all-novel\nPopular::/genre-all/sort-popular/status-all/all-novel",
+  "lastUpdateTime": 1762285745499,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": "span[itemprop=author]@text",
+    "coverUrl": "div.fixed-img img@src",
+    "intro": "div.content.expand-wrapper.show > p@text",
+    "lastChapter": "p.latest.text1row@text",
+    "name": "h1.novel-title@text"
+  },
+  "ruleContent": {
+    "content": "#novelArticle2@html"
+  },
+  "ruleExplore": {
+    "bookList": "ul.novel-list > li",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src",
+    "lastChapter": ".novel-stats@text",
+    "name": "h4@text"
+  },
+  "ruleSearch": {
+    "bookList": "li.novel-item",
+    "bookUrl": "a@href",
+    "checkKeyWord": "Monster",
+    "coverUrl": "figure.novel-cover img@src",
+    "intro": "a@text",
+    "name": "h4.novel-title@text"
+  },
+  "ruleToc": {
+    "chapterList": "ul.chapter-list li",
+    "chapterName": "strong.chapter-title@text",
+    "chapterUrl": "a@href"
+  },
+  "searchUrl": "/ajax/searchLive?inputContent={{key}}, {\"headers\": {\"X-Requested-With\": \"XMLHttpRequest\", \"Accept\": \"*/*\"}}",
+  "weight": 0
+}
