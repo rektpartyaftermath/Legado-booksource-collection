@@ -18,7 +18,7 @@
     "name": "h1@text"
   },
   "ruleContent": {
-    "content": "article .entry-content@html",
+    "content": "section#chapter-content p@text",
     "replaceRegex": "##<<Previous Chapter Index Next Chapter>>",
     "title": "h1@text##^(.*?)\\s–\\s"
   },
