@@ -14,8 +14,8 @@
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "h3:containsOwn(Author: )@text##Author: ",
-      "coverUrl": ".entry-content img@data-ezsrc",
-      "intro": "##<h3><strong>Description</strong></h3>([\\s\\S]*?)<hr>##$1###",
+      "coverUrl": "figure>a>img@src",
+      "intro": "##<section class="story__summary content-section">[\s\S]*?<h3><strong>Description</strong></h3>([\s\S]*?)</section>##$1###",
       "name": "h1@text"
     },
     "ruleContent": {
@@ -25,17 +25,16 @@
     },
     "ruleExplore": {
       "author": "",
-      "bookList": ".entry-content ul li",
+      "bookList": "div>ol>li",
       "bookUrl": "a@href",
       "name": "a@text"
     },
     "ruleReview": {},
     "ruleSearch": {},
     "ruleToc": {
-      "chapterList": "article .collapseomatic, article ul li a",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "isVolume": ".collapseomatic@html",
+      "chapterList": "section div ol li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
       "preUpdateJs": ""
     },
     "weight": 0
