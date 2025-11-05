@@ -750,49 +750,57 @@
     "bookSourceGroup": "English",
     "bookSourceName": "NovelFire",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://novelfire.net",
-    "customOrder": 16,
+    "bookSourceUrl": "https://novelfire.net/",
+    "customOrder": 3,
     "enabled": true,
-    "enabledCookieJar": true,
+    "enabledCookieJar": false,
     "enabledExplore": true,
-    "exploreUrl": "New::/genre-all/sort-new/status-all/all-novel\nPopular::/genre-all/sort-popular/status-all/all-novel",
-    "lastUpdateTime": 1762312372079,
+    "exploreUrl": "Ranking::ranking\nHighest Rating::ranking/ratings\nMost Read::ranking/most-read\nMost Reviewed::ranking/most-review\nMost Comments::ranking/most-comment\nCollections::ranking/most-lib",
+    "header": "{\n\"Referer\": \"https://novelfire.net/\"\n}",
+    "lastUpdateTime": 1761334234765,
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "span[itemprop=author]@text",
-      "coverUrl": "div.fixed-img img@src,data-src",
-      "intro": "div.content.expand-wrapper@text",
-      "lastChapter": "p.latest.text1row@text",
-      "name": "h1.novel-title@text",
-      "tocUrl": "@js:\nlet url = baseUrl;\nif (!url.endsWith('/')) url += '/';\nurl += 'chapters?page=1';\nurl;"
+      "author": ".author a span@text",
+      "coverUrl": ".cover img@data-src",
+      "init": "",
+      "intro": ".summary .content p@text",
+      "kind": ".categories ul li@text&&.tags ul.content li@text",
+      "lastChapter": ".chapter-latest-container .latest@text",
+      "name": "h2.novel-title@text",
+      "tocUrl": ".chapter-latest-container@href"
     },
     "ruleContent": {
-      "content": "#content@html"
+      "content": "#content@html",
+      "imageStyle": "",
+      "replaceRegex": "##\\s*This chapter upload first at.*|Follow this channel https.*|<img src.*>|Please bookmark.*|Read Web Novels Online Free.*"
     },
     "ruleExplore": {
-      "bookList": "ul.novel-list > li",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src,data-src",
-      "lastChapter": ".novel-stats@text",
-      "name": "h4@text"
+      "author": ".author a span@text",
+      "bookList": ".rank-novels .novel-item",
+      "bookUrl": ".title a@href",
+      "coverUrl": ".cover img@data-src",
+      "intro": ".summary .content p@text",
+      "kind": ".categories span@text",
+      "name": ".title a@text"
     },
     "ruleSearch": {
-      "author": "span[itemprop=author]@text | .item-body span@text | .novel-stats strong@text",
-      "bookList": "<js>\n// --- NovelFire Search Debug ---\njava.log('NF.search: raw result length=' + (result ? result.length : -1));\nvar data;\ntry { data = JSON.parse(result); } catch(e) { java.log('NF.search: JSON.parse failed -> ' + e); data = null; }\nif (!data || !data.html) {\n  java.log('NF.search: missing data.html');\n  var EmptyList = Packages.java.util.ArrayList; var el = new EmptyList(); el;\n}\nvar html = data.html;\njava.log('NF.search: html length=' + html.length);\nvar doc = org.jsoup.Jsoup.parse(html);\nvar list = doc.select('li.novel-item, ul.novel-list li');\njava.log('NF.search: matched items=' + (list ? list.size() : 0));\nvar ArrayList = Packages.java.util.ArrayList;\nvar out = new ArrayList();\nfor (var i = 0; i < list.size(); i++) {\n  var el = list.get(i);\n  var title = el.select('h4.novel-title, h4, a').text();\n  var href = el.select('a').attr('href');\n  if (!title || title.trim().length == 0) title = 'Untitled';\n  if (!href || href.trim().length == 0) href = 'https://novelfire.net';\n  if (el.select('span[itemprop=author]').text().trim().length == 0) {\n    el.append('<span itemprop=\"author\">Unknown Author</span>');\n  }\n  java.log('NF.search item['+i+']: ' + title + ' -> ' + href);\n  out.add(el);\n}\nout;\n</js>",
-      "bookUrl": "a@href",
-      "checkKeyWord": "farm",
-      "coverUrl": "img@data-src,img@src",
-      "intro": ".novel-stats strong@text",
-      "name": "h4.novel-title@text"
+      "author": "@css:.author@text",
+      "bookList": "<js>JSON.parse(result).html</js>@css:.novel-item",
+      "bookUrl": "@css:a@href",
+      "checkKeyWord": "Shadow Slave",
+      "coverUrl": "@css:img@src",
+      "intro": "@css:.novel-desc@text",
+      "kind": "@css:.novel-stats@text",
+      "lastChapter": "@css:.chapter-latest@text",
+      "name": "@css:.novel-title@text"
     },
     "ruleToc": {
-      "chapterList": "ul.chapter-list li",
+      "chapterList": ".chapter-list li",
       "chapterName": "strong.chapter-title@text",
       "chapterUrl": "a@href",
-      "nextTocUrl": "@js:\nlet list = [];\n// Force sequential pagination up to 100 pages (~10,000 chapters)\nfor (let i = 2; i <= 100; i++) {\n  list.push(baseUrl.split('?')[0] + '?page=' + i);\n}\nlist;",
-      "updateTime": "time.chapter-update@text"
+      "nextTocUrl": ".page-item.-2@text@js:\n// java.log(result)\njava.log(baseUrl)\npage = Number(result[0])\nlist = []\nif(!baseUrl.includes(\"?page=\")) {\nfor (i=2;i<=page;i++) {\nlist.push(baseUrl+\"?page=\"+i)\n}\n}\nlist\n\n"
     },
-    "searchUrl": "/ajax/searchLive?inputContent={{key}}, {\"headers\": {\"X-Requested-With\": \"XMLHttpRequest\", \"Accept\": \"*/*\", \"Referer\": \"https://novelfire.net/\"}}",
+    "searchUrl": "/ajax/searchLive?inputContent={{key}},{\n\"headers\": {\n\"X-Requested-With\": \"XMLHttpRequest\"\n}\n}",
     "weight": 0
   },
   {
