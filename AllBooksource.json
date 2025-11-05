@@ -601,52 +601,6 @@
   },
   {
     "bookSourceGroup": "English",
-    "bookSourceName": "📚 Ranobes",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://ranobes.top",
-    "customOrder": -1,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "exploreUrl": "Novels::https://ranobes.top/novels/",
-    "header": "{\n  \"Referer\": \"https://ranobes.top/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
-    "lastUpdateTime": 1762328652810,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
-      "coverUrl": ".r-fullstory-poster img@src",
-      "intro": ".r-desription .moreless__full@html",
-      "name": "meta[property=og:title]@content",
-      "tocUrl": "@js:\n// Build TOC URL using book ID extracted from novel URL\nlet id = baseUrl.match(/(\\d+)/);\nif (id) {\n  'https://ranobes.top/chapters/' + id[1] + '/';\n} else {\n  baseUrl;\n}"
-    },
-    "ruleContent": {
-      "content": "#arrticle p@html"
-    },
-    "ruleExplore": {
-      "bookList": "article.block.story",
-      "bookUrl": "h2.title a@href",
-      "coverUrl": "figure.cover@style##background-image:\\s*url\\((.*?)\\)##$1",
-      "name": "h2.title a@text"
-    },
-    "ruleSearch": {
-      "bookList": "article.block.story",
-      "bookUrl": "h2.title a@href",
-      "coverUrl": "figure.cover@style##background-image:\\s*url\\((.*?)\\)##$1",
-      "intro": "div.cont-in > div[style]@text",
-      "kind": ".r-rate .grey.small@text",
-      "name": "h2.title a@text"
-    },
-    "ruleToc": {
-      "chapterList": ".cat_block.cat_line",
-      "chapterName": "h6.title@text",
-      "chapterUrl": "a@href",
-      "nextTocUrl": ".page_next a@href##^/##https://ranobes.top/"
-    },
-    "searchUrl": "https://ranobes.top/search/{{key}}/",
-    "weight": 0
-  },
-  {
-    "bookSourceGroup": "English",
     "bookSourceName": "NovelFire",
     "bookSourceType": 0,
     "bookSourceUrl": "https://novelfire.net/",
