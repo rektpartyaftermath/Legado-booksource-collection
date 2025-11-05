@@ -429,12 +429,13 @@
     "bookSourceType": 0,
     "bookSourceUrl": "https://freewebnovel.com",
     "concurrentRate": "",
-    "customOrder": 13,
+    "customOrder": 6,
     "enabled": true,
     "enabledCookieJar": false,
-    "enabledExplore": false,
+    "enabledExplore": true,
+    "exploreUrl": "Most Popular::/sort/most-popular\nMost Popular - Monthly::/sort/most-popular/monthvisit\nMost Popular - weekvisit::/sort/most-popular/weekvisit\nMost Popular - Daily::/sort/most-popular/dayvisit\nLatest Novels::/sort/latest-novel\nLatest Releases::/sort/latest-release\nCompleted Novels::/sort/completed-novel",
     "header": "{\n\"Referer\": \"https://freewebnovel.com\",\n\"Accept-Language\": \"en-US,en;q=0.5\"\n}",
-    "lastUpdateTime": 1718801756927,
+    "lastUpdateTime": 1761337683188,
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "span[title=\"Author\"] + div a@text",
@@ -449,15 +450,34 @@
       "sourceRegex": "",
       "title": ""
     },
-    "ruleExplore": {},
-    "ruleReview": {},
-    "ruleSearch": {
-      "bookList": ".col-content .li-row",
-      "bookUrl": "a@href",
-      "checkKeyWord": "super",
+    "ruleExplore": {
+      "author": "",
+      "bookList": ".ul-list1 .li",
+      "bookUrl": "h3.tit a@href",
       "coverUrl": "img@src",
-      "kind": ".core span@text&&.desc .item.0@.right em@text&&.desc .item.1:2@.right a@text",
-      "name": "h3@text"
+      "intro": "",
+      "kind": ".core span@text",
+      "lastChapter": ".latest a@text",
+      "name": "h3.tit a@text"
+    },
+    "ruleSearch": {
+      "author": "",
+      "bookList": "@css:.ul-list1-2 > .li-row",
+      "bookUrl": "@css:a@href",
+      "checkKeyWord": "super",
+      "coverUrl": "@css:img@src",
+      "intro": "",
+      "kind": "@css:.core span@text&&.desc .item.0@.right em@text&&.desc .item.1:2@.right a@text",
+      "name": "@css:h3.tit a@text"
+    },
+    "ruleReview": {
+      "reviewList": ".e-comment-item",
+      "reviewer": ".e-username span@text",
+      "reviewContent": ".e-comment@text",
+      "reviewTime": ".color3.f14@text",
+      "reviewLikes": ".argee_num@text",
+      "reviewAvatar": ".e-avatar@src",
+      "nextReviewUrl": ".load-comment@onclick@js:\nvar match = result.match(/loadComment\\(([^)]+)\\)/);\nif(match) return match[1];\nreturn '';\n"
     },
     "ruleToc": {
       "chapterList": ".m-newest2 .ul-list5 li",
@@ -465,7 +485,7 @@
       "chapterUrl": "a@href",
       "nextTocUrl": ".page a:containsOwn(Next)@href"
     },
-    "searchUrl": "/search/,{\n\"method\": \"POST\",\nbody=\"searchkey={{key}}\"\n}",
+    "searchUrl": "/search,{\"method\":\"POST\",\"body\":\"searchkey={{key}}\"}",
     "weight": 0
   },
   {
