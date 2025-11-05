@@ -1,0 +1,96 @@
+name: Build AllBooksource.json
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'Booksource/**'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'Booksource/**'
+  workflow_dispatch:
+
+jobs:
+  build-booksource:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Combine book sources properly
+      run: |
+        python -c "
+        import json
+        import os
+        import glob
+        
+        # Find all JSON files in Booksource directory and subdirectories
+        json_files = glob.glob('Booksource/**/*.json', recursive=True)
+        
+        all_sources = []
+        
+        for json_file in json_files:
+            try:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    source_data = json.load(f)
+                    
+                    # Handle both single objects and arrays
+                    if isinstance(source_data, list):
+                        # If it's an array, extend the main list with its items
+                        all_sources.extend(source_data)
+                    else:
+                        # If it's a single object, append it
+                        all_sources.append(source_data)
+                        
+                    print(f'Processed: {json_file}')
+            except Exception as e:
+                print(f'Error reading {json_file}: {e}')
+        
+        # Write combined JSON to AllBooksource.json
+        with open('AllBooksource.json', 'w', encoding='utf-8') as f:
+            json.dump(all_sources, f, indent=2, ensure_ascii=False)
+        
+        print(f'Successfully combined {len(all_sources)} book sources into AllBooksource.json')
+        "
+        
+    - name: Validate JSON
+      run: |
+        python -c "
+        import json
+        try:
+            with open('AllBooksource.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            print('✅ AllBooksource.json is valid JSON')
+            print(f'📚 Contains {len(data)} book sources')
+            
+            # Check if it's a flat array
+            if all(isinstance(item, dict) for item in data):
+                print('✅ Structure is correct: flat array of objects')
+            else:
+                print('❌ Structure issue: contains nested arrays')
+                exit(1)
+                
+        except Exception as e:
+            print(f'❌ Invalid JSON: {e}')
+            exit(1)
+        "
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        if git diff --quiet AllBooksource.json; then
+          echo "No changes to AllBooksource.json"
+        else
+          git add AllBooksource.json
+          git commit -m "chore: update AllBooksource.json [automated]"
+          git push
+        fi
