@@ -407,35 +407,38 @@
   },
   {
     "bookSourceGroup": "English",
-    "bookSourceName": "Yong Library",
+    "bookSourceName": "📚 Yong Library",
     "bookSourceType": 0,
     "bookSourceUrl": "https://yonglibrary.com",
-    "customOrder": 9,
+    "customOrder": 0,
     "enabled": true,
     "enabledCookieJar": false,
-    "enabledExplore": false,
-    "exploreUrl": "Novels::https://yonglibrary.com/",
-    "header": "{\n\"Referer\": \"https://yonglibrary.com/\"\n}",
-    "lastUpdateTime": 1708313758033,
-    "loginUrl": "https://yonglibrary.com/",
+    "enabledExplore": true,
+    "exploreUrl": "Chinese::https://yonglibrary.com/chinese-novel/\nKorean::https://yonglibrary.com/korean-novel/",
+    "header": "{\n  \"Referer\": \"https://yonglibrary.com/\"\n}",
+    "lastUpdateTime": 1762325834713,
     "respondTime": 180000,
     "ruleBookInfo": {
-      "coverUrl": ".wp-block-post-featured-image > img@src"
+      "coverUrl": ".wp-block-post-featured-image img@src",
+      "intro": ".entry-content p@text",
+      "name": ".wp-block-post-title@text",
+      "tocUrl": "@js:\n// Force proper chapter listing page\nlet url = baseUrl;\nurl = url.replace(/\\/page\\/\\d+\\//, '').replace(/\\/$/, '');\nif (!/\\?filter=free/.test(url)) url += '/?filter=free';\nurl;"
     },
     "ruleContent": {
-      "content": ".entry-content > p@html"
+      "content": ".entry-content p@html"
     },
     "ruleExplore": {
-      "bookList": ".wp-block-page-list li a",
+      "bookList": ".wp-block-latest-posts__list li a, .wp-block-post a",
       "bookUrl": "href",
+      "coverUrl": ".wp-post-image@src",
       "name": "text"
     },
     "ruleSearch": {},
     "ruleToc": {
-      "chapterList": "-.wp-block-post-template li a",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "nextTocUrl": ".wp-block-query-pagination-numbers a.-1@ownText@js:\nnum = result[0]\narr = []\nfor(var i = 2; i <= num; i++) {\narr.push(baseUrl+\"?query-8-page=\"+i)\n}\narr"
+      "chapterList": "a.chapter-title",
+      "chapterName": "a.chapter-title@text",
+      "chapterUrl": "a.chapter-title@href",
+      "nextTocUrl": ".wp-block-query-pagination-numbers a.next@href"
     },
     "weight": 0
   },
