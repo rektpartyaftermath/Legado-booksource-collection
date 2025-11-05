@@ -1,43 +1,37 @@
-[
-  {
-    "bookSourceGroup": "English",
-    "bookSourceName": "DivineDaoLibrary",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.divinedaolibrary.com",
-    "customOrder": 6,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "exploreUrl": "Novels::https://www.divinedaolibrary.com/novels/",
-    "header": "{\n\"Referer\": \"https://www.divinedaolibrary.com/\"\n}",
-    "lastUpdateTime": 1718801591764,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": "h3:containsOwn(Author: )@text##Author: ",
-      "coverUrl": ".entry-content img@data-ezsrc",
-      "intro": "##<h3><strong>Description</strong></h3>([\\s\\S]*?)<hr>##$1###",
-      "name": "h1@text"
-    },
-    "ruleContent": {
-      "content": "article .entry-content@html",
-      "replaceRegex": "##<<Previous Chapter Index Next Chapter>>",
-      "title": "h1@text##^(.*?)\\s–\\s"
-    },
-    "ruleExplore": {
-      "author": "",
-      "bookList": ".entry-content ul li",
-      "bookUrl": "a@href",
-      "name": "a@text"
-    },
-    "ruleReview": {},
-    "ruleSearch": {},
-    "ruleToc": {
-      "chapterList": "article .collapseomatic, article ul li a",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "isVolume": ".collapseomatic@html",
-      "preUpdateJs": ""
-    },
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "DivineDaoLibrary",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.divinedaolibrary.com",
+  "customOrder": 10,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "exploreUrl": "Novels::https://www.divinedaolibrary.com/novels/",
+  "header": "{\n\"Referer\": \"https://www.divinedaolibrary.com/\"\n}",
+  "lastUpdateTime": 1762279556457,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": "h3:containsOwn(Author: )@text##Author: ",
+    "coverUrl": "figure>a>img@src",
+    "intro": "##<section class=\"story__summary content-section\">[\\s\\S]*?<h3><strong>Description</strong></h3>([\\s\\S]*?)</section>##$1###",
+    "name": "h1@text"
+  },
+  "ruleContent": {
+    "content": "section#chapter-content p@text",
+    "replaceRegex": "##<<Previous Chapter Index Next Chapter>>",
+    "title": "h1@text##^(.*?)\\s–\\s"
+  },
+  "ruleExplore": {
+    "bookList": "div>ol>li",
+    "bookUrl": "a@href",
+    "name": "a@text"
+  },
+  "ruleSearch": {},
+  "ruleToc": {
+    "chapterList": "section div ol li",
+    "chapterName": "a@text",
+    "chapterUrl": "a@href"
+  },
+  "weight": 0
+}
