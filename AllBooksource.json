@@ -87,7 +87,7 @@
   },
   {
     "bookSourceGroup": "English",
-    "bookSourceName": "libRead",
+    "bookSourceName": "🍗 LibRead",
     "bookSourceType": 0,
     "bookSourceUrl": "https://libread.com",
     "concurrentRate": "",
@@ -242,6 +242,57 @@
       "chapterUrl": "href"
     },
     "searchUrl": "https://wuxiaworld.site/?s={{key}}&post_type=wp-manga",
+    "weight": 0
+  },
+  {
+    "bookSourceGroup": "English",
+    "bookSourceName": "🍙 NovelsEmperor",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novelsemperor.net",
+    "customOrder": 12,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "Novels::https://novelsemperor.net/series?page={{page}}",
+    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36\",\n\"Referer\": \"https://novelsemperor.net/\"\n}",
+    "lastUpdateTime": 1762344750472,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "div.text-sm@text",
+      "coverUrl": "img@src",
+      "intro": "p#description@text",
+      "lastChapter": ".chapter-item:first-child a@text",
+      "name": "h2@text"
+    },
+    "ruleContent": {
+      "content": "div.chap-content@html||section.chap-content@html||article.chap-content@html||div.prose@html",
+      "replaceRegex": "##(Previous Chapter|Index|Next Chapter)",
+      "title": "h1@text||h2@text"
+    },
+    "ruleExplore": {
+      "author": ".text-sm@text",
+      "bookList": "#card-real",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "p@text",
+      "kind": ".flex.gap-1@text",
+      "name": "h2@text"
+    },
+    "ruleSearch": {
+      "author": ".text-sm@text",
+      "bookList": "#card-real",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "p@text",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": "#chapters-list a",
+      "chapterName": "div.flex.gap-2 span:first-child@text",
+      "chapterUrl": "@href",
+      "nextTocUrl": "<js>(function(){var cur=baseUrl.match(/page=(\\d+)/);var curPage=cur?parseInt(cur[1]):1;if(curPage>=20){return null;}var matches=[];var regex=/window\\.location\\.href='([^']+page=(\\d+)[^']*)'/g;var m;while((m=regex.exec(src))!==null){matches.push(m);}if(matches.length===0){return null;}for(var i=0;i<matches.length;i++){var p=parseInt(matches[i][2]);if(p>curPage&&p<=20){return matches[i][1];}}return null;})()</js>"
+    },
+    "searchUrl": "https://novelsemperor.net/series?title={{key}}&page={{page}}",
     "weight": 0
   },
   {
@@ -553,23 +604,23 @@
     "bookSourceName": "📚 Ranobes",
     "bookSourceType": 0,
     "bookSourceUrl": "https://ranobes.top",
-    "customOrder": -1,
+    "customOrder": 12,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
     "exploreUrl": "Novels::https://ranobes.top/novels/",
     "header": "{\n  \"Referer\": \"https://ranobes.top/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
-    "lastUpdateTime": 1762328652810,
+    "lastUpdateTime": 1762347205573,
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
+      "author": ".r-fullstory-spec ul li:contains(Authors:) span a@text",
       "coverUrl": ".r-fullstory-poster img@src",
       "intro": ".r-desription .moreless__full@html",
       "name": "meta[property=og:title]@content",
-      "tocUrl": "@js:\n// Build TOC URL using book ID extracted from novel URL\nlet id = baseUrl.match(/(\\d+)/);\nif (id) {\n  'https://ranobes.top/chapters/' + id[1] + '/';\n} else {\n  baseUrl;\n}"
+      "tocUrl": "@js:\nlet id = baseUrl.match(/(\\d+)/);\nif (id) 'https://ranobes.top/chapters/' + id[1] + '/,{\"webView\":true}';\nelse baseUrl;"
     },
     "ruleContent": {
-      "content": "#arrticle p@html"
+      "content": "#article p@html||#arrticle p@html||.content-text p@html##Read .*?Online for Free|Translated by.*##"
     },
     "ruleExplore": {
       "bookList": "article.block.story",
@@ -586,10 +637,10 @@
       "name": "h2.title a@text"
     },
     "ruleToc": {
-      "chapterList": ".cat_block.cat_line",
+      "chapterList": "-.cat_block.cat_line",
       "chapterName": "h6.title@text",
       "chapterUrl": "a@href",
-      "nextTocUrl": ".page_next a@href##^/##https://ranobes.top/"
+      "nextTocUrl": "<js>(function(){\n    var idMatch = baseUrl.match(/chapters\\/(\\d+)/);\n    if (!idMatch) return null;\n    var id = idMatch[1];\n\n    // Detect current page number (default = 1)\n    var cur = baseUrl.match(/page\\/(\\d+)/);\n    var curPage = cur ? parseInt(cur[1]) : 1;\n\n    // Find all available /page/x/ links\n    var regex = new RegExp('/chapters/' + id + '/page/(\\\\d+)/', 'g');\n    var matches = [];\n    var m;\n    while ((m = regex.exec(src)) !== null) {\n        var p = parseInt(m[1]);\n        if (!isNaN(p) && !matches.includes(p)) matches.push(p);\n    }\n\n    if (matches.length === 0) return null;\n\n    // Sort and get next greater page\n    matches.sort(function(a,b){return a-b});\n    for (var i=0; i<matches.length; i++) {\n        if (matches[i] > curPage) {\n            var nextUrl = 'https://ranobes.top/chapters/' + id + '/page/' + matches[i] + '/,{\"webView\":true}';\n            java.put('nextTocUrl', nextUrl);\n            return nextUrl;\n        }\n    }\n\n    java.put('nextTocUrl', 'End of pagination at page ' + curPage);\n    return null;\n})()</js>"
     },
     "searchUrl": "https://ranobes.top/search/{{key}}/",
     "weight": 0
