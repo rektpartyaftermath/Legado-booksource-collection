@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceGroup": "English",
+    "bookSourceName": "libRead",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://libread.com",
+    "concurrentRate": "",
+    "customOrder": 6,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "Most Popular::/sort/most-popular\nMost Popular - Monthly::/sort/most-popular/monthvisit\nMost Popular - weekvisit::/sort/most-popular/weekvisit\nMost Popular - Daily::/sort/most-popular/d\nLatest Novels::/sort/latest-novel\nLatest Releases::/sort/latest-release\nCompleted Novels::/sort/completed-novel",
+    "header": "{\n\"Referer\": \"https://libread.com\",\n\"Accept-Language\": \"en-US,en;q=0.5\"\n}",
+    "lastUpdateTime": 1761337683188,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "span[title=\"Author\"] + div a@text",
+      "coverUrl": ".m-imgtxt img@src",
+      "intro": ".m-desc .txt@html",
+      "kind": "span[title=\"Genre\"] + div a@text",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "#article p!-1@html##<h[45]>.*</h[45]>",
+      "replaceRegex": "",
+      "sourceRegex": "",
+      "title": ""
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": ".ul-list1 .li",
+      "bookUrl": "h3.tit a@href",
+      "coverUrl": "img@src",
+      "intro": "",
+      "kind": ".core span@text",
+      "lastChapter": ".latest a@text",
+      "name": "h3.tit a@text"
+    },
+    "ruleSearch": {
+      "author": "",
+      "bookList": "@css:.ul-list1-2 > .li-row",
+      "bookUrl": "@css:a@href",
+      "checkKeyWord": "super",
+      "coverUrl": "@css:img@src",
+      "intro": "",
+      "kind": "@css:.core span@text&&.desc .item.0@.right em@text&&.desc .item.1:2@.right a@text",
+      "name": "@css:h3.tit a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".m-newest2 .ul-list5 li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".page a:containsOwn(Next)@href"
+    },
+    "searchUrl": "/search,{\"method\":\"POST\",\"body\":\"searchkey={{key}}\"}",
+    "weight": 0
+  }
+]
