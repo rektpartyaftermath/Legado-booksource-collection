@@ -1,48 +1,46 @@
-[
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "English",
-    "bookSourceName": "Ranobes",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://ranobes.top",
-    "concurrentRate": "3/1000",
-    "customOrder": 18,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "lastUpdateTime": 1693882053781,
-    "loginUrl": "https://ranobes.net/kontol-terbang",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
-      "coverUrl": ".r-fullstory-poster img@src##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
-      "init": "@js:\na = java.getString(\".reason #content@text\")\nif (a.includes(\"Loading...\")) {\nbookUrl = java.get(\"bookUrl\") + `,{\"webView\": true, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`\njava.ajax(bookUrl)\n} else {\nresult\n}\n",
-      "intro": ".r-desription .moreless__full@html",
-      "kind": "#mc-fs-genre a@text",
-      "name": "meta[property=og:title]@content",
-      "tocUrl": ".r-fullstory-chapters-foot > a.1@href<js>java.put(\"chapterUrl\", result)</js>##$##,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}"
-    },
-    "ruleContent": {
-      "content": "#arrticle@html"
-    },
-    "ruleExplore": {},
-    "ruleReview": {},
-    "ruleSearch": {
-      "bookList": "#dle-content > article",
-      "bookUrl": "a@href<js>java.put(\"bookUrl\", result)</js>##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
-      "checkKeyWord": "city",
-      "coverUrl": ".cont-in figure@style##background-image: url\\((.*?)\\);##$1,{\"headers\": {\"Referer\": \"https://ranobes.net/\"}}###",
-      "intro": ".cont-in@text",
-      "kind": ".r-rate.1@text",
-      "name": "h2@text"
-    },
-    "ruleToc": {
-      "chapterList": "-script:containsData(window.__DATA__ = )\n<js>\njson = String(result.first().data()).replace(/^window.__DATA__ = /, '')\njava.put('pages', JSON.parse(json).pages_count.toString())\njson\n</js>$.chapters.[*]",
-      "chapterName": "$.title",
-      "chapterUrl": "$.link##$##,{\"headers\":{\"Referer\": \"https://ranobes.net/\"}}",
-      "nextTocUrl": "@js:\npages = Number(java.get(\"pages\"))\nchapterUrl = java.get(\"chapterUrl\")\nurls = []\nfor (i=2; i <= pages; i++) {\nurls.push(`${chapterUrl }page/${i}/,{\"retry\": 3, \"headers\":{\"Referer\": \"https://ranobes.net/\"}}`)\n}\nurls"
-    },
-    "searchUrl": "/index.php?do=search,{\n\"method\": \"POST\",\n\"body\": \"do=search&subaction=search&search_start=0&full_search=0&result_from=1&story={{key}}\",\n\"headers\":{\"Referer\": \"https://ranobes.net/\"}\n}",
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "📚 Ranobes",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://ranobes.top",
+  "customOrder": -1,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "exploreUrl": "Novels::https://ranobes.top/novels/",
+  "header": "{\n  \"Referer\": \"https://ranobes.top/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
+  "lastUpdateTime": 1762328652810,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": ".r-fullstory-spec ul li:contains(Authors: ) span a@text",
+    "coverUrl": ".r-fullstory-poster img@src",
+    "intro": ".r-desription .moreless__full@html",
+    "name": "meta[property=og:title]@content",
+    "tocUrl": "@js:\n// Build TOC URL using book ID extracted from novel URL\nlet id = baseUrl.match(/(\\d+)/);\nif (id) {\n  'https://ranobes.top/chapters/' + id[1] + '/';\n} else {\n  baseUrl;\n}"
+  },
+  "ruleContent": {
+    "content": "#arrticle p@html"
+  },
+  "ruleExplore": {
+    "bookList": "article.block.story",
+    "bookUrl": "h2.title a@href",
+    "coverUrl": "figure.cover@style##background-image:\\s*url\\((.*?)\\)##$1",
+    "name": "h2.title a@text"
+  },
+  "ruleSearch": {
+    "bookList": "article.block.story",
+    "bookUrl": "h2.title a@href",
+    "coverUrl": "figure.cover@style##background-image:\\s*url\\((.*?)\\)##$1",
+    "intro": "div.cont-in > div[style]@text",
+    "kind": ".r-rate .grey.small@text",
+    "name": "h2.title a@text"
+  },
+  "ruleToc": {
+    "chapterList": ".cat_block.cat_line",
+    "chapterName": "h6.title@text",
+    "chapterUrl": "a@href",
+    "nextTocUrl": ".page_next a@href##^/##https://ranobes.top/"
+  },
+  "searchUrl": "https://ranobes.top/search/{{key}}/",
+  "weight": 0
+}

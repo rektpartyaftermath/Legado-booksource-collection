@@ -1,51 +1,56 @@
-[
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "English",
-    "bookSourceName": "NovelFull",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://novelfull.com",
-    "customOrder": 9,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "exploreUrl": "shounen::/genre/shounen?page={{page}}\nharem::/genre/harem?page={{page}}\ncomedy::/genre/comedy?page={{page}}\nmartial-arts::/genre/martial-arts?page={{page}}\nschool-life::/genre/school-life?page={{page}}\nmystery::/genre/mystery?page={{page}}\nshoujo::/genre/shoujo?page={{page}}\nromance::/genre/romance?page={{page}}\nsci-fi::/genre/sci-fi?page={{page}}\ngender-bender::/genre/gender-bender?page={{page}}\nmature::/genre/mature?page={{page}}\nfantasy::/genre/fantasy?page={{page}}\nhorror::/genre/horror?page={{page}}\ndrama::/genre/drama?page={{page}}\ntragedy::/genre/tragedy?page={{page}}\nsupernatural::/genre/supernatural?page={{page}}\necchi::/genre/ecchi?page={{page}}\nxuanhuan::/genre/xuanhuan?page={{page}}\nadventure::/genre/adventure?page={{page}}\naction::/genre/action?page={{page}}\npsychological::/genre/psychological?page={{page}}\nxianxia::/genre/xianxia?page={{page}}\nwuxia::/genre/wuxia?page={{page}}\nhistorical::/genre/historical?page={{page}}\nslice-of-life::/genre/slice-of-life?page={{page}}\nseinen::/genre/seinen?page={{page}}\nlolicon::/genre/lolicon?page={{page}}\nadult::/genre/adult?page={{page}}\njosei::/genre/josei?page={{page}}\nsports::/genre/sports?page={{page}}\nsmut::/genre/smut?page={{page}}\nmecha::/genre/mecha?page={{page}}\nyaoi::/genre/yaoi?page={{page}}\nshounen-ai::/genre/shounen-ai?page={{page}}\nhistory::/genre/history?page={{page}}\nmartial::/genre/martial?page={{page}}",
-    "lastUpdateTime": 1693996656025,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "init": "",
-      "intro": "@css:div.desc-text>p@text",
-      "kind": "@css:div.info>div:contains(genre)>a@text"
-    },
-    "ruleContent": {
-      "content": "@css:div#chapter-content p@text"
-    },
-    "ruleExplore": {
-      "author": "@css:span.author@text",
-      "bookList": "@css:div.list-truyen:contains(list)>div.row",
-      "bookUrl": "@css:h3.truyen-title>a@href",
-      "coverUrl": "@css:div>img@src",
-      "lastChapter": "@css:div>a@text",
-      "name": "@css:h3.truyen-title>a@text"
-    },
-    "ruleReview": {},
-    "ruleSearch": {
-      "author": "@css:span.author@text",
-      "bookList": "@css:div.list-truyen:contains(search)>div.row",
-      "bookUrl": "@css:h3.truyen-title>a@href## ##%20",
-      "checkKeyWord": "Former",
-      "coverUrl": "@css:div>img@src",
-      "kind": "",
-      "lastChapter": "@css:div>a@text",
-      "name": "@css:h3.truyen-title>a@text"
-    },
-    "ruleToc": {
-      "chapterList": "@css:ul.list-chapter>li",
-      "chapterName": "@css:a@text",
-      "chapterUrl": "@css:a@href##^##https://novelfull.com",
-      "nextTocUrl": "@css:li.next>a@href##^##https://novelfull.com"
-    },
-    "searchUrl": "/search?keyword={{key}}",
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "📚 NovelFull",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://novelfull.net",
+  "customOrder": 7,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "exploreUrl": "Latest::/latest-release-novel?page={{page}}\nHot::/hot-novel?page={{page}}\nCompleted::/completed-novel?page={{page}}\nMost Popular::/most-popular?page={{page}}",
+  "header": "{\n  \"Referer\": \"https://novelfull.net/\",\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 12; Nexus 5X Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 Mobile Safari/537.36\"\n}",
+  "lastUpdateTime": 1762355000000,
+  "respondTime": 180000,
+
+  "ruleBookInfo": {
+    "intro": "div.desc-text p@text",
+    "kind": "div.info div:contains(Genre) a@text",
+    "author": "div.info div:contains(Author) a@text",
+    "coverUrl": "div.book img@src",
+    "name": "h3.title@text",
+    "tocUrl": "a.read@href##^##https://novelfull.net"
+  },
+
+  "ruleContent": {
+    "content": "#chapter-content p@html"
+  },
+
+  "ruleExplore": {
+    "bookList": "div.list div.row",
+    "bookUrl": "h3 a@href##^##https://novelfull.net",
+    "coverUrl": "img.cover@src",
+    "name": "h3 a@text",
+    "author": "span.author@text",
+    "lastChapter": "div.text-info a@text"
+  },
+
+  "ruleSearch": {
+    "bookList": "div.list-truyen div.row",
+    "bookUrl": "h3.truyen-title a@href##^##https://novelfull.net",
+    "coverUrl": "img@src",
+    "intro": "div.text-info@text",
+    "name": "h3.truyen-title a@text",
+    "author": "span.author@text"
+  },
+
+  "ruleToc": {
+    "chapterList": "#list-chapter ul.list-chapter li",
+    "chapterName": "a span.chapter-text@text",
+    "chapterUrl": "a@href##^##https://novelfull.net",
+    "nextTocUrl": "ul.pagination li.next a@href##^##https://novelfull.net/",
+    "chapterReverse": true
+  },
+
+  "searchUrl": "/search?keyword={{key}}",
+  "weight": 0
+}
