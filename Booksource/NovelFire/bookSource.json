@@ -1,47 +1,52 @@
-[
-  {
-    "bookSourceGroup": "English",
-    "bookSourceName": "NovelFire",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://novelfire.net/",
-    "customOrder": 3,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": false,
-    "header": "{\n\"Referer\": \"https://novelfire.net/\"\n}",
-    "lastUpdateTime": 1718801461663,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": ".author a span@text",
-      "coverUrl": ".cover img@data-src",
-      "init": "",
-      "intro": ".introduce .txt p!-1@html",
-      "kind": ".categories ul li@text&&.tags ul.content li@text",
-      "name": "h1.novel-title@text",
-      "tocUrl": ".chapter-latest-container@href"
-    },
-    "ruleContent": {
-      "content": "#content@html",
-      "imageStyle": "",
-      "replaceRegex": "##\\s*This chapter upload first at.*|Follow this channel https.*|<img src.*>|Please bookmark.*|Read Web Novels Online Free.*"
-    },
-    "ruleExplore": {},
-    "ruleReview": {},
-    "ruleSearch": {
-      "bookList": "<js>JSON.parse(result).html</js>@css:.novel-item",
-      "bookUrl": "@css:a@href",
-      "checkKeyWord": "Extra's Magic",
-      "coverUrl": "@css:img@src",
-      "kind": "@css:.novel-stats@text",
-      "name": "@css:.novel-title@text"
-    },
-    "ruleToc": {
-      "chapterList": ".chapter-list li",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href",
-      "nextTocUrl": ".page-item.-2@text@js:\n// java.log(result)\njava.log(baseUrl)\npage = Number(result[0])\nlist = []\nif(!baseUrl.includes(\"?page=\")) {\nfor (i=2;i<=page;i++) {\nlist.push(baseUrl+\"?page=\"+i)\n}\n}\nlist\n\n"
-    },
-    "searchUrl": "/ajax/searchLive?inputContent={{key}},{\n\"headers\": {\n\"X-Requested-With\": \"XMLHttpRequest\"\n}\n}",
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "NovelFire",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://novelfire.net",
+  "customOrder": 16,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "exploreUrl": "New::/genre-all/sort-new/status-all/all-novel\nPopular::/genre-all/sort-popular/status-all/all-novel",
+  "respondTime": 180000,
+  "weight": 0,
+
+  "ruleBookInfo": {
+    "author": "span[itemprop=author]@text",
+    "coverUrl": "div.fixed-img img@src,data-src",
+    "intro": "div.content.expand-wrapper@text",
+    "lastChapter": "p.latest.text1row@text",
+    "name": "h1.novel-title@text",
+    "tocUrl": "@js:\nvar url = baseUrl;\nif (!url.endsWith('/')) url += '/';\nurl += 'chapters?page=1';\nurl;"
+  },
+
+  "ruleToc": {
+    "chapterList": "ul.chapter-list li",
+    "chapterName": "strong.chapter-title@text",
+    "chapterUrl": "a@href",
+    "updateTime": "time.chapter-update@text",
+    "nextTocUrl": "@js:\nvar list = [];\nfor (var i = 2; i <= 100; i++) {\n  list.push(baseUrl.split('?')[0] + '?page=' + i);\n}\nlist;"
+  },
+
+  "ruleContent": {
+    "content": "#content@html"
+  },
+
+  "ruleExplore": {
+    "bookList": "ul.novel-list > li",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src,data-src",
+    "name": "h4@text",
+    "lastChapter": ".novel-stats@text"
+  },
+
+  "ruleSearch": {
+    "bookList": "<js>\nvar data = JSON.parse(result);\nvar html = data.html;\nvar doc = org.jsoup.Jsoup.parse(html);\nvar list = doc.select('ul.novel-list li.novel-item');\nif (list == null || list.size() == 0) list = doc.select('li.novel-item');\njava.log('NovelFire search found ' + list.size() + ' results');\nvar ArrayList = java.util.ArrayList;\nvar resultList = new ArrayList();\nfor (var i = 0; i < list.size(); i++) {\n  resultList.add(list.get(i));\n}\nresultList;\n</js>",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src,data-src",
+    "name": "h4@text",
+    "intro": "div.novel-stats span@text"
+  },
+
+  "searchUrl": "/ajax/searchLive?inputContent={{key}},{\"headers\": {\"X-Requested-With\": \"XMLHttpRequest\", \"Accept\": \"*/*\", \"Referer\": \"https://novelfire.net/\"}}"
+}
