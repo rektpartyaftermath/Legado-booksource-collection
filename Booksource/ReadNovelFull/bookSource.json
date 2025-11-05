@@ -1,47 +1,49 @@
-[
-  {
-    "bookSourceGroup": "English",
-    "bookSourceName": "ReadNovelFull",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://readnovelfull.com",
-    "customOrder": 2,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": false,
-    "exploreUrl": "",
-    "header": "{\n\"Referer\": \"https://readnovelfull.com/\"\n}",
-    "lastUpdateTime": 1706031859176,
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": ".info-meta h3:containsOwn(Author:) ~ a@text",
-      "coverUrl": ".books img@src",
-      "intro": ".desc-text@html",
-      "kind": ".info-meta h3:containsOwn(Genre:) ~ a@text",
-      "lastChapter": ".l-chapter a@text",
-      "name": "h3.title@text",
-      "tocUrl": "https://readnovelfull.com/ajax/chapter-archive?novelId={{@@#rating@data-novel-id}},{\n\"headers\": {\n\"X-Requested-With\": \"XMLHttpRequest\"\n}\n}"
-    },
-    "ruleContent": {
-      "content": "#chr-content p@html##<h3>.*</h3>",
-      "replaceRegex": "##If you want to read more chapters.*"
-    },
-    "ruleExplore": {},
-    "ruleReview": {},
-    "ruleSearch": {
-      "author": ".author@text",
-      "bookList": ".list-novel .row",
-      "bookUrl": "h3 a@href",
-      "checkKeyWord": "world",
-      "coverUrl": ".cover@src##200x89##300x439",
-      "intro": "",
-      "name": "h3@text"
-    },
-    "ruleToc": {
-      "chapterList": ".list-chapter a",
-      "chapterName": "text",
-      "chapterUrl": "href"
-    },
-    "searchUrl": "/novel-list/search?keyword={{key}}<,&page={{page}}>",
-    "weight": 0
-  }
-]
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "❤️‍🔥 ReadNovelFull",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://readnovelfull.com",
+  "customOrder": 4,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "exploreUrl": "Latest::/novel-list/latest-release-novel?page={{page}}\nHot::/novel-list/hot-novel?page={{page}}\nMost Popular::/novel-list/completed-novel?page={{page}}\nCompleted::/novel-list/completed-novel?page={{page}}",
+  "header": "{\n\"Referer\": \"https://readnovelfull.com/\"\n}",
+  "lastUpdateTime": 1762334540105,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": ".info-meta h3:containsOwn(Author:) ~ a@text",
+    "coverUrl": ".books img@src",
+    "intro": ".desc-text@html",
+    "kind": ".info-meta h3:containsOwn(Genre:) ~ a@text",
+    "lastChapter": ".l-chapter a@text",
+    "name": "h3.title@text",
+    "tocUrl": "https://readnovelfull.com/ajax/chapter-archive?novelId={{@@#rating@data-novel-id}},{\n\"headers\": {\n\"X-Requested-With\": \"XMLHttpRequest\"\n}\n}"
+  },
+  "ruleContent": {
+    "content": "#chr-content p@html##<h3>.*</h3>",
+    "replaceRegex": "##If you want to read more chapters.*"
+  },
+  "ruleExplore": {
+    "author": "span.author@text",
+    "bookList": "div.list div.row",
+    "bookUrl": "h3 a@href",
+    "coverUrl": "img.cover@src",
+    "name": "h3 a@text"
+  },
+  "ruleSearch": {
+    "author": ".author@text",
+    "bookList": ".list-novel .row",
+    "bookUrl": "h3 a@href",
+    "checkKeyWord": "world",
+    "coverUrl": ".cover@src##200x89##300x439",
+    "name": "h3@text"
+  },
+  "ruleToc": {
+    "chapterList": ".list-chapter a",
+    "chapterName": "text",
+    "chapterUrl": "href"
+  },
+  "searchUrl": "/novel-list/search?keyword={{key}}<,&page={{page}}>",
+  "weight": 0
+}
