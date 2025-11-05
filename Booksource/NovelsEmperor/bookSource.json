@@ -1,0 +1,51 @@
+{
+  "bookSourceGroup": "English",
+  "bookSourceName": "🍙 NovelsEmperor",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://novelsemperor.net",
+  "customOrder": 12,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "exploreUrl": "Novels::https://novelsemperor.net/series?page={{page}}",
+  "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36\",\n\"Referer\": \"https://novelsemperor.net/\"\n}",
+  "lastUpdateTime": 1762344750472,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": "div.text-sm@text",
+    "coverUrl": "img@src",
+    "intro": "p#description@text",
+    "lastChapter": ".chapter-item:first-child a@text",
+    "name": "h2@text"
+  },
+  "ruleContent": {
+    "content": "div.chap-content@html||section.chap-content@html||article.chap-content@html||div.prose@html",
+    "replaceRegex": "##(Previous Chapter|Index|Next Chapter)",
+    "title": "h1@text||h2@text"
+  },
+  "ruleExplore": {
+    "author": ".text-sm@text",
+    "bookList": "#card-real",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src",
+    "intro": "p@text",
+    "kind": ".flex.gap-1@text",
+    "name": "h2@text"
+  },
+  "ruleSearch": {
+    "author": ".text-sm@text",
+    "bookList": "#card-real",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src",
+    "intro": "p@text",
+    "name": "h2@text"
+  },
+  "ruleToc": {
+    "chapterList": "#chapters-list a",
+    "chapterName": "div.flex.gap-2 span:first-child@text",
+    "chapterUrl": "@href",
+    "nextTocUrl": "<js>(function(){var cur=baseUrl.match(/page=(\\d+)/);var curPage=cur?parseInt(cur[1]):1;if(curPage>=20){return null;}var matches=[];var regex=/window\\.location\\.href='([^']+page=(\\d+)[^']*)'/g;var m;while((m=regex.exec(src))!==null){matches.push(m);}if(matches.length===0){return null;}for(var i=0;i<matches.length;i++){var p=parseInt(matches[i][2]);if(p>curPage&&p<=20){return matches[i][1];}}return null;})()</js>"
+  },
+  "searchUrl": "https://novelsemperor.net/series?title={{key}}&page={{page}}",
+  "weight": 0
+}
