@@ -496,7 +496,7 @@
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "New Update::https://lightnovelworld.org/updates/?page={{page}}",
+    "exploreUrl": "New Update::/updates/?page={{page}}\nTop Ranked::/ranking/?sort=rank/?page={{page}}\nTop Reviews::/ranking/?sort=reviews/?page={{page}\nTop Comments::/ranking/?sort=comments/?page={{page}\nTop Collections::/ranking/?sort=collections/?page={{page}",
     "lastUpdateTime": 1754572138780,
     "respondTime": 180000,
     "ruleBookInfo": {
