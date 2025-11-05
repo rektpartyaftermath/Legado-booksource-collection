@@ -3,16 +3,14 @@
   "bookSourceName": "📚 Ranobes",
   "bookSourceType": 0,
   "bookSourceUrl": "https://ranobes.top",
-  "customOrder": -1,
+  "customOrder": 12,
   "enabled": true,
   "enabledCookieJar": true,
   "enabledExplore": true,
   "exploreUrl": "Novels::https://ranobes.top/novels/",
   "header": "{\n  \"Referer\": \"https://ranobes.top/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
+  "lastUpdateTime": 1762347205573,
   "respondTime": 180000,
-  "lastUpdateTime": 1762328652810,
-  "weight": 0,
-
   "ruleBookInfo": {
     "author": ".r-fullstory-spec ul li:contains(Authors:) span a@text",
     "coverUrl": ".r-fullstory-poster img@src",
@@ -20,26 +18,15 @@
     "name": "meta[property=og:title]@content",
     "tocUrl": "@js:\nlet id = baseUrl.match(/(\\d+)/);\nif (id) 'https://ranobes.top/chapters/' + id[1] + '/,{\"webView\":true}';\nelse baseUrl;"
   },
-
-  "ruleToc": {
-    "chapterList": "-.cat_block.cat_line",
-    "chapterName": "h6.title@text",
-    "chapterUrl": "a@href",
-    "nextTocUrl": "<js>(function(){\n    // 1️⃣ Try normal pagination link\n    var next = java.getString('.page_next a@href');\n    if (next && next.trim() !== '') {\n        if (next.startsWith('/')) return 'https://ranobes.top' + next;\n        return next;\n    }\n    // 2️⃣ Fallback: look for any /page/x/ pattern in HTML\n    var cur = baseUrl.match(/page\\/(\\d+)/);\n    var curPage = cur ? parseInt(cur[1]) : 1;\n    var idMatch = baseUrl.match(/chapters\\/(\\d+)/);\n    var id = idMatch ? idMatch[1] : null;\n    if (!id) return null;\n    var pages = [];\n    var regex = /\\/chapters\\/"+id+"\\/page\\/(\\d+)\\//g;\n    var m;\n    while ((m = regex.exec(src)) !== null) pages.push(parseInt(m[1]));\n    pages = pages.filter(p => p > curPage).sort((a,b)=>a-b);\n    if (pages.length > 0) return 'https://ranobes.top/chapters/' + id + '/page/' + pages[0] + '/';\n    return null;\n})()</js>"
-  },
-
   "ruleContent": {
-    "content": "#article p@html||#arrticle p@html||.content-text p@html##Read .*?Online for Free|Translated by.*##",
-    "nextContentUrl": ""
+    "content": "#article p@html||#arrticle p@html||.content-text p@html##Read .*?Online for Free|Translated by.*##"
   },
-
   "ruleExplore": {
     "bookList": "article.block.story",
     "bookUrl": "h2.title a@href",
     "coverUrl": "figure.cover@style##background-image:\\s*url\\((.*?)\\)##$1",
     "name": "h2.title a@text"
   },
-
   "ruleSearch": {
     "bookList": "article.block.story",
     "bookUrl": "h2.title a@href",
@@ -48,6 +35,12 @@
     "kind": ".r-rate .grey.small@text",
     "name": "h2.title a@text"
   },
-
-  "searchUrl": "https://ranobes.top/search/{{key}}/"
+  "ruleToc": {
+    "chapterList": "-.cat_block.cat_line",
+    "chapterName": "h6.title@text",
+    "chapterUrl": "a@href",
+    "nextTocUrl": "<js>(function(){\n    var idMatch = baseUrl.match(/chapters\\/(\\d+)/);\n    if (!idMatch) return null;\n    var id = idMatch[1];\n\n    // Detect current page number (default = 1)\n    var cur = baseUrl.match(/page\\/(\\d+)/);\n    var curPage = cur ? parseInt(cur[1]) : 1;\n\n    // Find all available /page/x/ links\n    var regex = new RegExp('/chapters/' + id + '/page/(\\\\d+)/', 'g');\n    var matches = [];\n    var m;\n    while ((m = regex.exec(src)) !== null) {\n        var p = parseInt(m[1]);\n        if (!isNaN(p) && !matches.includes(p)) matches.push(p);\n    }\n\n    if (matches.length === 0) return null;\n\n    // Sort and get next greater page\n    matches.sort(function(a,b){return a-b});\n    for (var i=0; i<matches.length; i++) {\n        if (matches[i] > curPage) {\n            var nextUrl = 'https://ranobes.top/chapters/' + id + '/page/' + matches[i] + '/,{\"webView\":true}';\n            java.put('nextTocUrl', nextUrl);\n            return nextUrl;\n        }\n    }\n\n    java.put('nextTocUrl', 'End of pagination at page ' + curPage);\n    return null;\n})()</js>"
+  },
+  "searchUrl": "https://ranobes.top/search/{{key}}/",
+  "weight": 0
 }
