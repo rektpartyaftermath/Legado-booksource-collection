@@ -38,16 +38,16 @@
   },
   {
     "bookSourceGroup": "English",
-    "bookSourceName": "ReadNovelFull",
+    "bookSourceName": "❤️‍🔥 ReadNovelFull",
     "bookSourceType": 0,
     "bookSourceUrl": "https://readnovelfull.com",
-    "customOrder": 2,
+    "customOrder": 4,
     "enabled": true,
     "enabledCookieJar": true,
-    "enabledExplore": false,
-    "exploreUrl": "",
+    "enabledExplore": true,
+    "exploreUrl": "Latest::/novel-list/latest-release-novel?page={{page}}\nHot::/novel-list/hot-novel?page={{page}}\nMost Popular::/novel-list/completed-novel?page={{page}}\nCompleted::/novel-list/completed-novel?page={{page}}",
     "header": "{\n\"Referer\": \"https://readnovelfull.com/\"\n}",
-    "lastUpdateTime": 1706031859176,
+    "lastUpdateTime": 1762334540105,
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": ".info-meta h3:containsOwn(Author:) ~ a@text",
@@ -62,15 +62,19 @@
       "content": "#chr-content p@html##<h3>.*</h3>",
       "replaceRegex": "##If you want to read more chapters.*"
     },
-    "ruleExplore": {},
-    "ruleReview": {},
+    "ruleExplore": {
+      "author": "span.author@text",
+      "bookList": "div.list div.row",
+      "bookUrl": "h3 a@href",
+      "coverUrl": "img.cover@src",
+      "name": "h3 a@text"
+    },
     "ruleSearch": {
       "author": ".author@text",
       "bookList": ".list-novel .row",
       "bookUrl": "h3 a@href",
       "checkKeyWord": "world",
       "coverUrl": ".cover@src##200x89##300x439",
-      "intro": "",
       "name": "h3@text"
     },
     "ruleToc": {
