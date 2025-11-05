@@ -8,45 +8,42 @@
   "enabledCookieJar": true,
   "enabledExplore": true,
   "exploreUrl": "New::/genre-all/sort-new/status-all/all-novel\nPopular::/genre-all/sort-popular/status-all/all-novel",
+  "lastUpdateTime": 1762312372079,
   "respondTime": 180000,
-  "weight": 0,
-
   "ruleBookInfo": {
     "author": "span[itemprop=author]@text",
     "coverUrl": "div.fixed-img img@src,data-src",
     "intro": "div.content.expand-wrapper@text",
     "lastChapter": "p.latest.text1row@text",
     "name": "h1.novel-title@text",
-    "tocUrl": "@js:\nvar url = baseUrl;\nif (!url.endsWith('/')) url += '/';\nurl += 'chapters?page=1';\nurl;"
+    "tocUrl": "@js:\nlet url = baseUrl;\nif (!url.endsWith('/')) url += '/';\nurl += 'chapters?page=1';\nurl;"
   },
-
-  "ruleToc": {
-    "chapterList": "ul.chapter-list li",
-    "chapterName": "strong.chapter-title@text",
-    "chapterUrl": "a@href",
-    "updateTime": "time.chapter-update@text",
-    "nextTocUrl": "@js:\nvar list = [];\nfor (var i = 2; i <= 100; i++) {\n  list.push(baseUrl.split('?')[0] + '?page=' + i);\n}\nlist;"
-  },
-
   "ruleContent": {
     "content": "#content@html"
   },
-
   "ruleExplore": {
     "bookList": "ul.novel-list > li",
     "bookUrl": "a@href",
     "coverUrl": "img@src,data-src",
-    "name": "h4@text",
-    "lastChapter": ".novel-stats@text"
+    "lastChapter": ".novel-stats@text",
+    "name": "h4@text"
   },
-
   "ruleSearch": {
-    "bookList": "<js>\nvar data = JSON.parse(result);\nvar html = data.html;\nvar doc = org.jsoup.Jsoup.parse(html);\nvar list = doc.select('ul.novel-list li.novel-item');\nif (list == null || list.size() == 0) list = doc.select('li.novel-item');\njava.log('NovelFire search found ' + list.size() + ' results');\nvar ArrayList = java.util.ArrayList;\nvar resultList = new ArrayList();\nfor (var i = 0; i < list.size(); i++) {\n  resultList.add(list.get(i));\n}\nresultList;\n</js>",
+    "author": "span[itemprop=author]@text | .item-body span@text | .novel-stats strong@text",
+    "bookList": "<js>\n// --- NovelFire Search Debug ---\njava.log('NF.search: raw result length=' + (result ? result.length : -1));\nvar data;\ntry { data = JSON.parse(result); } catch(e) { java.log('NF.search: JSON.parse failed -> ' + e); data = null; }\nif (!data || !data.html) {\n  java.log('NF.search: missing data.html');\n  var EmptyList = Packages.java.util.ArrayList; var el = new EmptyList(); el;\n}\nvar html = data.html;\njava.log('NF.search: html length=' + html.length);\nvar doc = org.jsoup.Jsoup.parse(html);\nvar list = doc.select('li.novel-item, ul.novel-list li');\njava.log('NF.search: matched items=' + (list ? list.size() : 0));\nvar ArrayList = Packages.java.util.ArrayList;\nvar out = new ArrayList();\nfor (var i = 0; i < list.size(); i++) {\n  var el = list.get(i);\n  var title = el.select('h4.novel-title, h4, a').text();\n  var href = el.select('a').attr('href');\n  if (!title || title.trim().length == 0) title = 'Untitled';\n  if (!href || href.trim().length == 0) href = 'https://novelfire.net';\n  if (el.select('span[itemprop=author]').text().trim().length == 0) {\n    el.append('<span itemprop=\"author\">Unknown Author</span>');\n  }\n  java.log('NF.search item['+i+']: ' + title + ' -> ' + href);\n  out.add(el);\n}\nout;\n</js>",
     "bookUrl": "a@href",
-    "coverUrl": "img@src,data-src",
-    "name": "h4@text",
-    "intro": "div.novel-stats span@text"
+    "checkKeyWord": "farm",
+    "coverUrl": "img@data-src,img@src",
+    "intro": ".novel-stats strong@text",
+    "name": "h4.novel-title@text"
   },
-
-  "searchUrl": "/ajax/searchLive?inputContent={{key}},{\"headers\": {\"X-Requested-With\": \"XMLHttpRequest\", \"Accept\": \"*/*\", \"Referer\": \"https://novelfire.net/\"}}"
+  "ruleToc": {
+    "chapterList": "ul.chapter-list li",
+    "chapterName": "strong.chapter-title@text",
+    "chapterUrl": "a@href",
+    "nextTocUrl": "@js:\nlet list = [];\n// Force sequential pagination up to 100 pages (~10,000 chapters)\nfor (let i = 2; i <= 100; i++) {\n  list.push(baseUrl.split('?')[0] + '?page=' + i);\n}\nlist;",
+    "updateTime": "time.chapter-update@text"
+  },
+  "searchUrl": "/ajax/searchLive?inputContent={{key}}, {\"headers\": {\"X-Requested-With\": \"XMLHttpRequest\", \"Accept\": \"*/*\", \"Referer\": \"https://novelfire.net/\"}}",
+  "weight": 0
 }
