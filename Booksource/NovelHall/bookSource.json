@@ -1,0 +1,40 @@
+{
+  "bookSourceComment": "BY: OshekharO",
+  "bookSourceGroup": "English",
+  "bookSourceName": "NovelHall",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.novelhall.com",
+  "customOrder": 11,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "exploreUrl": "All::https://www.novelhall.com/all2022.html\nLatest Novel::https://www.novelhall.com/lastupdate.html\nNew Novel::https://www.novelhall.com/new.html",
+  "header": "{\"Referer\": \"https://www.novelhall.com/\"}",
+  "lastUpdateTime": 1762386277660,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": "span.blue:first-child",
+    "coverUrl": "div.intro>img@src",
+    "intro": "span.js-close-wrap@text",
+    "name": "h1@text"
+  },
+  "ruleContent": {
+    "content": "#htmlContent@html",
+    "title": "h1@text"
+  },
+  "ruleExplore": {
+    "bookList": "td.w70||li.btm",
+    "bookUrl": "a@href",
+    "name": "a@text"
+  },
+  "ruleSearch": {
+    "checkKeyWord": "my"
+  },
+  "ruleToc": {
+    "chapterList": "#morelist > ul > li",
+    "chapterName": "a@text",
+    "chapterUrl": "a@href"
+  },
+  "searchUrl": "https://www.novelhall.com/index.php?s=so&module=book&keyword={{key}}",
+  "weight": 0
+}
