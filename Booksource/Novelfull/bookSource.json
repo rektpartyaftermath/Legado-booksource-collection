@@ -3,14 +3,14 @@
   "bookSourceName": "📚 NovelFull",
   "bookSourceType": 0,
   "bookSourceUrl": "https://novelfull.net",
-  "customOrder": 7,
   "enabled": true,
-  "enabledCookieJar": false,
+  "enabledCookieJar": true,
   "enabledExplore": true,
   "exploreUrl": "Latest::/latest-release-novel?page={{page}}\nHot::/hot-novel?page={{page}}\nCompleted::/completed-novel?page={{page}}\nMost Popular::/most-popular?page={{page}}",
-  "header": "{\n  \"Referer\": \"https://novelfull.net/\",\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 12; Nexus 5X Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 Mobile Safari/537.36\"\n}",
-  "lastUpdateTime": 1762355000000,
+  "header": "{\n  \"Referer\": \"https://novelfull.net/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
   "respondTime": 180000,
+  "lastUpdateTime": 1762355000000,
+  "weight": 0,
 
   "ruleBookInfo": {
     "intro": "div.desc-text p@text",
@@ -18,11 +18,19 @@
     "author": "div.info div:contains(Author) a@text",
     "coverUrl": "div.book img@src",
     "name": "h3.title@text",
-    "tocUrl": "a.read@href##^##https://novelfull.net"
+    "tocUrl": "@js:\n// Force WebView for first TOC load, with safe stop\nif(baseUrl.includes('-novel.html')){\n  baseUrl + ',{\"webView\":true,\"webViewTimeout\":5000}';\n}else{\n  let m = baseUrl.match(/https:\\/\\/novelfull\\.net\\/([a-z0-9-]+)/i);\n  m ? 'https://novelfull.net/' + m[1] + '-novel.html,{\"webView\":true,\"webViewTimeout\":5000}' : baseUrl;\n}"
+  },
+
+  "ruleToc": {
+    "chapterList": "ul.list-chapter li",
+    "chapterName": "a span.chapter-text@text||a@title",
+    "chapterUrl": "a@href##^##https://novelfull.net",
+    "isReverseOrder": true,
+    "nextTocUrl": "<js>(function(){\n    var next = java.getString('ul.pagination li.next a@href');\n    if (next && next.trim() !== '') {\n        var full = next.startsWith('/') ? 'https://novelfull.net' + next : next;\n        return full; // no webView after first page\n    }\n\n    var cur = baseUrl.match(/page=(\\d+)/);\n    var curPage = cur ? parseInt(cur[1]) : 1;\n    if (src.includes('?page=' + (curPage + 1))) {\n        return baseUrl.replace(/(\\?page=\\d+)?$/, '') + '?page=' + (curPage + 1);\n    }\n    return null;\n})()</js>"
   },
 
   "ruleContent": {
-    "content": "#chapter-content p@html"
+    "content": "#chapter-content p@html||div.chapter-content p@html"
   },
 
   "ruleExplore": {
@@ -43,14 +51,5 @@
     "author": "span.author@text"
   },
 
-  "ruleToc": {
-    "chapterList": "#list-chapter ul.list-chapter li",
-    "chapterName": "a span.chapter-text@text",
-    "chapterUrl": "a@href##^##https://novelfull.net",
-    "nextTocUrl": "ul.pagination li.next a@href##^##https://novelfull.net/",
-    "chapterReverse": true
-  },
-
-  "searchUrl": "/search?keyword={{key}}",
-  "weight": 0
+  "searchUrl": "/search?keyword={{key}}"
 }
