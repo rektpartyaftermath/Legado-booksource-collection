@@ -143,16 +143,16 @@
   },
   {
     "bookSourceGroup": "English",
-    "bookSourceName": "WTR-LAB (API Fixed)",
+    "bookSourceName": "🎇 WTR-LAB",
     "bookSourceType": 0,
     "bookSourceUrl": "https://wtr-lab.com",
-    "customOrder": 1,
+    "customOrder": 4,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
     "exploreUrl": "Index::/novel-finder?orderBy=name&order=asc&ge=29%2C39&page={{page}}\nDaily::/ranking/daily?page={{page}}\nWeekly::/ranking/weekly?page={{page}}\nMonthly::/ranking/monthly?page={{page}}",
     "header": "{\n  \"Referer\": \"https://wtr-lab.com/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
-    "lastUpdateTime": 1762336570163,
+    "lastUpdateTime": 1762390885342,
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "//td[contains(text(),'Author')]/following-sibling::td//a/text()",
@@ -160,11 +160,11 @@
       "intro": "//script[@id='__NEXT_DATA__']/text()<js>\nconst json = JSON.parse(result);\nresult = json.props.pageProps.serie.serie_data.data.description;\n</js>",
       "kind": "//td[contains(text(),'Genre')]/following-sibling::td//a/text()",
       "name": "//h1/text()[not(ancestor::span[@class='rawtitle'])]<js>\nresult = result.replace(/\\n/g, ' ').replace(/\\s+/g, ' ').trim();\n</js>",
-      "tocUrl": "//script[@id='__NEXT_DATA__']/text()<js>\nvar json = JSON.parse(result);\n// Try all possible ID sources\nvar id = json.query.sid || json.props?.pageProps?.serie?.serie_data?.data?.id || json.props?.pageProps?.serie?.serie_data?.id;\nif (!id) {\n  throw 'Error: Novel ID not found in __NEXT_DATA__';\n}\n'https://wtr-lab.com/api/chapters/' + id + '?start=1&end=9999';\n</js>"
+      "tocUrl": "//script[@id='__NEXT_DATA__']/text()<js>\nconst json = JSON.parse(result);\nvar id = json.query.sid || json.props?.pageProps?.serie?.serie_data?.data?.id || json.props?.pageProps?.serie?.serie_data?.id;\nif (!id) throw 'Error: Novel ID not found';\n'https://wtr-lab.com/api/chapters/' + id + '?start=1&end=9999';\n</js>"
     },
     "ruleContent": {
-      "content": "div.chapter-body p@html",
-      "title": "h3.chapter-title@text"
+      "content": "<js>\n(function() {\n  var url = (typeof java !== 'undefined' && java.getUrl) ? java.getUrl() : (typeof src !== 'undefined' ? String(src) : '');\n  if (!url) throw 'Missing URL context';\n\n  var match = url.match(/novel\\/([0-9]+)\\/(?:[^\\/]+)\\/chapter-([0-9]+)/);\n  if (!match) throw 'Invalid chapter URL: ' + url;\n  var id = match[1];\n  var chapter = match[2];\n\n  var langMatch = url.match(/https?:\\/\\/[^\\/]+\\/([^\\/]+)\\/novel/);\n  var lang = langMatch ? langMatch[1] : 'en';\n\n  var body = JSON.stringify({\n    translate: 'ai',\n    language: lang,\n    raw_id: id,\n    chapter_no: chapter,\n    retry: false,\n    force_retry: false\n  });\n\n  var res = java.post('https://wtr-lab.com/api/reader/get', body,\n    {'Content-Type':'application/json;charset=UTF-8'}).body();\n\n  var json = JSON.parse(res);\n  var data = (json.data && json.data.data) ? json.data.data : {};\n  var lines = data.body || [];\n  var imgs  = data.images || [];\n\n  var content = '';\n  var imgIndex = 0;\n  for (var i = 0; i < lines.length; i++) {\n    var line = lines[i];\n    if (line === '[image]') {\n      var img = imgs[imgIndex++] || '';\n      if (img) content += '<img src=\\\"\" + img + \"\\\">';\n    } else {\n      content += '<p>' + line + '</p>';\n    }\n  }\n  return content.trim();\n})();\n</js>",
+      "title": "//h1/text()"
     },
     "ruleExplore": {
       "bookList": "//div[@class='serie-item']",
@@ -185,7 +185,7 @@
     },
     "ruleToc": {
       "chapterList": "$.chapters[*]",
-      "chapterName": "#{{$.order}} - {{$.title}}<js>\nfunction toTitleCase(sentence){\n  var lowers=['a','an','and','the','in','on','at','by','for','of','with','to','but','or','nor','as'];\n  function multiCap(w){return (w.match(/[A-Z]/g)||[]).length>=2;}\n  return sentence.split(' ').map(function(w,i,a){var p=a[i-1];if(i===0||i===a.length-1||multiCap(w)||(p&&(p.endsWith(':')||p.endsWith('-')))||!lowers.includes(w.toLowerCase()))return w.charAt(0).toUpperCase()+w.slice(1);return w.toLowerCase();}).join(' ');\n}\nresult = toTitleCase(result.replace(/\\s+/g,' ').trim());\n</js>",
+      "chapterName": "#{{$.order}} - {{$.title}}<js>\nfunction toTitleCase(sentence){\n  const lowers=['a','an','and','the','in','on','at','by','for','of','with','to','but','or','nor','as'];\n  function multiCap(w){return (w.match(/[A-Z]/g)||[]).length>=2;}\n  return sentence.split(' ').map((w,i,a)=>{\n    const p=a[i-1];\n    if(i===0||i===a.length-1||multiCap(w)||(p&&(p.endsWith(':')||p.endsWith('-')))||!lowers.includes(w.toLowerCase()))\n      return w.charAt(0).toUpperCase()+w.slice(1);\n    return w.toLowerCase();\n  }).join(' ');\n}\nresult = toTitleCase(result.replace(/\\s+/g,' ').trim());\n</js>",
       "chapterUrl": "<js>\n'https://wtr-lab.com/en/serie-' + result.serie_id + '/chapter-' + result.order + '?service=google';\n</js>",
       "updateTime": "{{$.updated_at}}"
     },
@@ -290,6 +290,7 @@
     "weight": 0
   },
   {
+    "bookSourceComment": "BY: OshekharO",
     "bookSourceGroup": "English",
     "bookSourceName": "🍙 NovelsEmperor",
     "bookSourceType": 0,
@@ -440,6 +441,46 @@
       "nextTocUrl": ".page a:containsOwn(Next)@href"
     },
     "searchUrl": "/search,{\"method\":\"POST\",\"body\":\"searchkey={{key}}\"}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "BY: OshekharO",
+    "bookSourceGroup": "English",
+    "bookSourceName": "💤 NovelHall",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.novelhall.com",
+    "customOrder": 11,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "All::https://www.novelhall.com/all2022.html\nLatest Novel::https://www.novelhall.com/lastupdate.html\nNew Novel::https://www.novelhall.com/new.html",
+    "header": "{\"Referer\": \"https://www.novelhall.com/\"}",
+    "lastUpdateTime": 1762386277660,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "span.blue:first-child",
+      "coverUrl": "div.intro>img@src",
+      "intro": "span.js-close-wrap@text",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "#htmlContent@html",
+      "title": "h1@text"
+    },
+    "ruleExplore": {
+      "bookList": "td.w70||li.btm",
+      "bookUrl": "a@href",
+      "name": "a@text"
+    },
+    "ruleSearch": {
+      "checkKeyWord": "my"
+    },
+    "ruleToc": {
+      "chapterList": "#morelist > ul > li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "https://www.novelhall.com/index.php?s=so&module=book&keyword={{key}}",
     "weight": 0
   },
   {
@@ -687,6 +728,40 @@
       "nextTocUrl": "<js>(function(){\n    var idMatch = baseUrl.match(/chapters\\/(\\d+)/);\n    if (!idMatch) return null;\n    var id = idMatch[1];\n\n    // Detect current page number (default = 1)\n    var cur = baseUrl.match(/page\\/(\\d+)/);\n    var curPage = cur ? parseInt(cur[1]) : 1;\n\n    // Find all available /page/x/ links\n    var regex = new RegExp('/chapters/' + id + '/page/(\\\\d+)/', 'g');\n    var matches = [];\n    var m;\n    while ((m = regex.exec(src)) !== null) {\n        var p = parseInt(m[1]);\n        if (!isNaN(p) && !matches.includes(p)) matches.push(p);\n    }\n\n    if (matches.length === 0) return null;\n\n    // Sort and get next greater page\n    matches.sort(function(a,b){return a-b});\n    for (var i=0; i<matches.length; i++) {\n        if (matches[i] > curPage) {\n            var nextUrl = 'https://ranobes.top/chapters/' + id + '/page/' + matches[i] + '/,{\"webView\":true}';\n            java.put('nextTocUrl', nextUrl);\n            return nextUrl;\n        }\n    }\n\n    java.put('nextTocUrl', 'End of pagination at page ' + curPage);\n    return null;\n})()</js>"
     },
     "searchUrl": "https://ranobes.top/search/{{key}}/",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "BY: OshekharO",
+    "bookSourceGroup": "English",
+    "bookSourceName": "⏱️ Grimm’s Fairy Tales",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.grimmstories.com/",
+    "customOrder": 11,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "English::https://www.grimmstories.com/en/grimm_fairy-tales/list\n格林童話::https://www.grimmstories.com/zh/grimm_tonghua/list\nグリム童話::https://www.grimmstories.com/ja/grimm_dowa/list",
+    "header": "{\"Referer\": \"https://www.grimmstories.com/\"}",
+    "lastUpdateTime": 1762384669266,
+    "respondTime": 180000,
+    "ruleBookInfo": {},
+    "ruleContent": {
+      "content": "div[itemprop=text] div.s@text||div.s@text",
+      "imageStyle": "0",
+      "replaceRegex": "##(Advertisement|Previous Chapter|Next Chapter|Index|<<.*?>>)",
+      "title": "h1@text##^(.*?)\\s–"
+    },
+    "ruleExplore": {
+      "bookList": "ul>li",
+      "bookUrl": "h3>a@href",
+      "name": "h3@text"
+    },
+    "ruleSearch": {},
+    "ruleToc": {
+      "chapterList": "<js>[{\"name\":\"Full Story\",\"url\":book.bookUrl}]</js>",
+      "chapterName": "name",
+      "chapterUrl": "url"
+    },
     "weight": 0
   },
   {
