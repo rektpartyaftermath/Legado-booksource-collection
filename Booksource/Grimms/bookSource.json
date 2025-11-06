@@ -1,0 +1,34 @@
+{
+  "bookSourceComment": "BY: OshekharO",
+  "bookSourceGroup": "English",
+  "bookSourceName": "⏱️ Grimm’s Fairy Tales",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.grimmstories.com/",
+  "customOrder": 11,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "exploreUrl": "English::https://www.grimmstories.com/en/grimm_fairy-tales/list\n格林童話::https://www.grimmstories.com/zh/grimm_tonghua/list\nグリム童話::https://www.grimmstories.com/ja/grimm_dowa/list",
+  "header": "{\"Referer\": \"https://www.grimmstories.com/\"}",
+  "lastUpdateTime": 1762384669266,
+  "respondTime": 180000,
+  "ruleBookInfo": {},
+  "ruleContent": {
+    "content": "div[itemprop=text] div.s@text||div.s@text",
+    "imageStyle": "0",
+    "replaceRegex": "##(Advertisement|Previous Chapter|Next Chapter|Index|<<.*?>>)",
+    "title": "h1@text##^(.*?)\\s–"
+  },
+  "ruleExplore": {
+    "bookList": "ul>li",
+    "bookUrl": "h3>a@href",
+    "name": "h3@text"
+  },
+  "ruleSearch": {},
+  "ruleToc": {
+    "chapterList": "<js>[{\"name\":\"Full Story\",\"url\":book.bookUrl}]</js>",
+    "chapterName": "name",
+    "chapterUrl": "url"
+  },
+  "weight": 0
+}
