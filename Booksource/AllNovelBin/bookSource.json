@@ -26,7 +26,7 @@
     "author": "span.author@text",
     "bookList": "div.list-novel > div.row",
     "bookUrl": "h3>a@href",
-    "coverUrl": "img.cover.lazy@src",
+    "coverUrl": "img.cover.lazy@data-src",
     "lastChapter": "span.chr-text@text",
     "name": "h3>a@text"
   },
